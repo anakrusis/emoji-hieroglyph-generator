@@ -1,4 +1,4 @@
-TEXT_COLUMNS = 5;
+TEXT_COLUMNS = 15;
 SPACES_DRAWN = true;
 CHAR_DIM = 72;
 CHAR_PADDING = 4;
@@ -21,6 +21,52 @@ function preload(){
 		"f":   loadImage("emoji/fire.png"),
 		"g":   loadImage("emoji/gear.png"),
 		"h":   loadImage("emoji/rabbit.png"),
+		"j":   loadImage("emoji/jar.png"),
+		"k":   loadImage("emoji/key.png"),
+		"l":   loadImage("emoji/leaves.png"),
+		"m":   loadImage("emoji/house.png"),
+		"n":   loadImage("emoji/leg.png"),
+		"nd":  loadImage("emoji/raised_hand.png"),
+		"ng":  loadImage("emoji/horse.png"),
+		"ns":  loadImage("emoji/sauropod.png"),
+		"nt":  loadImage("emoji/knot.png"),
+		"p":   loadImage("emoji/feet.png"),
+		"pl":  loadImage("emoji/person_swimming.png"),
+		"pr":  loadImage("emoji/pear.png"),
+		"r":   loadImage("emoji/ear.png"),
+		"s":   loadImage("emoji/ice_cube.png"),
+		"sb":  loadImage("emoji/spoon.png"),
+		"sd":  loadImage("emoji/star.png"),
+		"sg":  loadImage("emoji/socks.png"),
+		"sh":  loadImage("emoji/athletic_shoe.png"),
+		"shn": loadImage("emoji/sparkles.png"),
+		"shp": loadImage("emoji/sailboat.png"),
+		"t":   loadImage("emoji/tea.png"),
+		"T":   loadImage("emoji/coffee.png"),
+		"th":  loadImage("emoji/thread.png"),
+		"tr":  loadImage("emoji/tree.png"),
+		"v":   loadImage("emoji/ocean.png"),
+		"w":   loadImage("emoji/whale.png"),
+		"y":   loadImage("emoji/sweet_potato.png"),
+		"z":   loadImage("emoji/cloud.png"),
+		
+		// logograms next...
+		// (I'll just add them as they are needed)
+		"point_up": 	loadImage("emoji/point_up.png"),
+		"point_down": 	loadImage("emoji/point_down.png"),
+		"point_left": 	loadImage("emoji/point_left.png"),
+		"point_right": 	loadImage("emoji/point_right.png"),
+		"point_up_2":	loadImage("emoji/point_up_2.png"),
+		"inbox_tray":	loadImage("emoji/inbox_tray.png"),
+		"outbox_tray":	loadImage("emoji/outbox_tray.png"),
+		
+		"test_tube":	loadImage("emoji/test_tube.png"),
+		"bulb":			loadImage("emoji/bulb.png"),
+		"writing_hand":	loadImage("emoji/writing_hand.png"),
+		"wave": 		loadImage("emoji/wave.png"),
+		
+		"computer":		loadImage("emoji/computer.png"),
+		"scroll":		loadImage("emoji/scroll.png"),
 		
 		" ":   loadImage("emoji/space.png"),
 		"ERROR":  loadImage("emoji/NO_EMOJI.png"),
@@ -45,7 +91,8 @@ function transcribeText(text){
 		}
 		if (cchar == "]"){
 			inbracket = false; 
-			textlist.push( currentgrouping ); continue;
+			textlist.push( currentgrouping ); 
+			currentgrouping = ""; continue;
 		}
 		
 		if (inbracket){
@@ -56,7 +103,6 @@ function transcribeText(text){
 	}
 	// Its janky but this just add a space to the end so the last (or only) word is seen as a word
 	textlist.push(" ");
-	console.log(textlist);
 	
 	// to word wrap, we will see if the current space character is on the same row as the last one
 	// if they are on different rows, then we know that the word has spilled into the next row.
@@ -82,6 +128,9 @@ function transcribeText(text){
 				
 				// If a word is longer than the max number of columns, 
 				// then there isn't anything we can do to make it fit
+				
+				// otherwise, to make words appear on the next line, we give them
+				// the complement number of the columns count.
 				if (currword.length <= TEXT_COLUMNS ){
 					var blanks_to_insert = TEXT_COLUMNS - (lastspaceind % TEXT_COLUMNS) - 1;
 					console.log("bti: " + blanks_to_insert);
@@ -94,65 +143,21 @@ function transcribeText(text){
 			}
 			currword = [];
 			
+		}else if (cchar == "\n"){
+/* 			var blanks_to_insert = TEXT_COLUMNS - (currword.length + % TEXT_COLUMNS);
+			for (var q = 0; q < blanks_to_insert; q++){
+				textlist.splice(i, 0, " ");
+				i++;
+			}
+			currword = []; */
+			
 		}else{
 			currword.push(cchar);
 		}
 		i++;
 	}
-	
-	
-/* 	// will append words to these tables until there isnt any room left
-	var textrows = [[]];
-	var currrow = 0;
-	var currcol  = 0;
-	var currword = "";
-	var inbracket = false;
-	
-	// Its janky but this just add a space to the end so the last (or only) word is seen as a word
-	if (text.charAt( text.length - 1 ) != " "){
-		text += " ";
-	}
-	
-	// the first pass separates the rows for word wrap
-	for (var i = 0; i < text.length; i++){
-		var cc = text.charAt(i); // current char
-		if (cc == " " || cc == "\n"){
-
-			// word gets wrapped to the next line
-			if (currcol > TEXT_COLUMNS){
-				currrow++;
-				currcol = 0;
-				textrows[currrow] = [currword];
-				
-			// word is put on the current line
-			}else{
-				textrows[currrow].push(currword);
-				currcol++;
-			}
-			// newline forced
-			if (cc == "\n"){
-				currrow++;
-				currcol = 0;
-				textrows[currrow] = [];
-			}
-			
-			currword = "";
-			
-		}else{
-			if (cc == "["){
-				inbracket = true;
-			}
-			if (cc == "]"){
-				inbracket = false;
-			}
-			currword += cc;
-			// text in brackets don't count towards the column count (except the final ] character)
-			// this is because it will become one character
-			if (!inbracket){
-				currcol++;
-			}
-		}
-	} */
+	// removes the extra space character we added earlier
+	textlist.pop();
 	
 	var rows = 1 + Math.floor( textlist.length / TEXT_COLUMNS );
 	
@@ -166,42 +171,10 @@ function transcribeText(text){
 		var y = Math.floor( i / TEXT_COLUMNS );
 		drawGlyph(textlist[i], x, y);
 	}
-	
-/* 	// the second pass reads word groupings and places the emojii accordingly
-	for (var row = 0; row < textrows.length; row++){
-		var column = 0;
-		
-		for (var wi = 0; wi < textrows[row].length; wi++){
-			var word = textrows[row][wi];
-			var inbrackets = false;
-			var currentgrouping = "";
-			
-			// iterating through the chars in the word
-			for (var li = 0; li < word.length; li++){
-				var ltr = word.charAt(li);
-				if (inbrackets){
-					if (ltr == "]"){
-						inbrackets = false;
-					}else{
-						currentgrouping += ltr;
-					}
-					
-				// outside of brackets, individual letters are parsed
-				}else{
-					if (ltr == "["){
-						inbrackets = true;
-					}else{
-						drawGlyph(ltr, column, row);
-						column++;
-					}
-				}
-			}
-		}
-	} */
 }
 
 function drawGlyph(glyphname, column, row){
-	//if (glyphname == " " || glyphname == "\n"){ return }
+	if (glyphname == " "){ return }
 	var img = GLYPHS[glyphname] ? GLYPHS[glyphname] : GLYPHS["ERROR"];
 	var x = CHAR_PADDING + ( column * ( CHAR_DIM + CHAR_PADDING ) );
 	var y = CHAR_PADDING + ( row * (CHAR_DIM + CHAR_PADDING ))
