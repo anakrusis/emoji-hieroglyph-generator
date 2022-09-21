@@ -19,7 +19,7 @@ input:hover {
 .button1, .moves{
 	width: 100%;
 }
-.button1:hover {
+button:hover {
 	background-color: #445566;
 }
 .moves{

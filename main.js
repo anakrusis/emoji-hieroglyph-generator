@@ -22,7 +22,8 @@ function preload(){
 		"g":   loadImage("emoji/gear.png"),
 		"h":   loadImage("emoji/rabbit.png"),
 		
-		"error":  loadImage("emoji/NO_EMOJI.png"),
+		" ":   loadImage("emoji/space.png"),
+		"ERROR":  loadImage("emoji/NO_EMOJI.png"),
 	}
 }
 
@@ -31,7 +32,76 @@ function draw(){
 }
 
 function transcribeText(text){
-	// will append words to these tables until there isnt any room left
+	
+	var textlist = [];
+	var inbracket = false;
+	var currentgrouping = "";
+	
+	// first we will just seperate the characters in brackets into a 1-dimensional list
+	for (var i = 0; i < text.length; i++){
+		var cchar = text.charAt(i);
+		if (cchar == "["){
+			inbracket = true; continue;
+		}
+		if (cchar == "]"){
+			inbracket = false; 
+			textlist.push( currentgrouping ); continue;
+		}
+		
+		if (inbracket){
+			currentgrouping += cchar;
+		}else{
+			textlist.push(cchar);
+		}
+	}
+	// Its janky but this just add a space to the end so the last (or only) word is seen as a word
+	textlist.push(" ");
+	console.log(textlist);
+	
+	// to word wrap, we will see if the current space character is on the same row as the last one
+	// if they are on different rows, then we know that the word has spilled into the next row.
+	
+	var currspaceind = 0;
+	var lastspaceind = 0;
+	var currword = [];
+	
+	var i = 0;
+	while (i < textlist.length){
+		var cchar = textlist[i];
+		if (cchar == " "){
+			lastspaceind = currspaceind;
+			currspaceind = i;
+			
+			lastspacerow = Math.floor(lastspaceind / TEXT_COLUMNS );
+			currspacerow = Math.floor(currspaceind / TEXT_COLUMNS );
+			
+			if (lastspacerow != currspacerow){
+				
+				console.log("lsi: " + lastspaceind + " csi: " + currspaceind);
+				console.log(currword)
+				
+				// If a word is longer than the max number of columns, 
+				// then there isn't anything we can do to make it fit
+				if (currword.length <= TEXT_COLUMNS ){
+					var blanks_to_insert = TEXT_COLUMNS - (lastspaceind % TEXT_COLUMNS) - 1;
+					console.log("bti: " + blanks_to_insert);
+					for (var q = 0; q < blanks_to_insert; q++){
+						textlist.splice(lastspaceind, 0, " ");
+						i++;
+						currspaceind++;
+					}
+				}
+			}
+			currword = [];
+			
+		}else{
+			currword.push(cchar);
+		}
+		i++;
+	}
+	
+	
+/* 	// will append words to these tables until there isnt any room left
 	var textrows = [[]];
 	var currrow = 0;
 	var currcol  = 0;
@@ -82,13 +152,22 @@ function transcribeText(text){
 				currcol++;
 			}
 		}
-	}
+	} */
+	
+	var rows = 1 + Math.floor( textlist.length / TEXT_COLUMNS );
+	
 	var canvaswidth = CHAR_PADDING + (TEXT_COLUMNS * (CHAR_DIM + CHAR_PADDING))
-	var canvasheight = CHAR_PADDING + (textrows.length * (CHAR_DIM + CHAR_PADDING))
+	var canvasheight = CHAR_PADDING + (rows * (CHAR_DIM + CHAR_PADDING))
 	resizeCanvas( canvaswidth, canvasheight );
 	clear();
 	
-	// the second pass reads word groupings and places the emojii accordingly
+	for (var i = 0; i < textlist.length; i++){
+		var x = ( i % TEXT_COLUMNS );
+		var y = Math.floor( i / TEXT_COLUMNS );
+		drawGlyph(textlist[i], x, y);
+	}
+	
+/* 	// the second pass reads word groupings and places the emojii accordingly
 	for (var row = 0; row < textrows.length; row++){
 		var column = 0;
 		
@@ -118,11 +197,12 @@ function transcribeText(text){
 				}
 			}
 		}
-	}
+	} */
 }
 
 function drawGlyph(glyphname, column, row){
-	var img = GLYPHS[glyphname] ? GLYPHS[glyphname] : GLYPHS["error"];
+	//if (glyphname == " " || glyphname == "\n"){ return }
+	var img = GLYPHS[glyphname] ? GLYPHS[glyphname] : GLYPHS["ERROR"];
 	var x = CHAR_PADDING + ( column * ( CHAR_DIM + CHAR_PADDING ) );
 	var y = CHAR_PADDING + ( row * (CHAR_DIM + CHAR_PADDING ))
 	image(img,x,y,CHAR_DIM,CHAR_DIM);
