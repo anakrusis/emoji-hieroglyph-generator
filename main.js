@@ -5,6 +5,7 @@ CHAR_PADDING = 4;
 
 function setup(){
 	document.getElementById("btn").onclick = function(){
+		SPACES_DRAWN = document.getElementById("spacecb").checked;
 		var text = document.getElementById("textarea").value;
 		transcribeText(text);
 	}
@@ -23,6 +24,8 @@ function preload(){
 		"h":   loadImage("emoji/rabbit.png"),
 		"j":   loadImage("emoji/jar.png"),
 		"k":   loadImage("emoji/key.png"),
+		"kl":  loadImage("emoji/red_car.png"),
+		"kr":  loadImage("emoji/call_me.png"),
 		"l":   loadImage("emoji/leaves.png"),
 		"m":   loadImage("emoji/house.png"),
 		"n":   loadImage("emoji/leg.png"),
@@ -52,21 +55,33 @@ function preload(){
 		
 		// logograms next...
 		// (I'll just add them as they are needed)
-		"point_up": 	loadImage("emoji/point_up.png"),
-		"point_down": 	loadImage("emoji/point_down.png"),
-		"point_left": 	loadImage("emoji/point_left.png"),
-		"point_right": 	loadImage("emoji/point_right.png"),
-		"point_up_2":	loadImage("emoji/point_up_2.png"),
-		"inbox_tray":	loadImage("emoji/inbox_tray.png"),
-		"outbox_tray":	loadImage("emoji/outbox_tray.png"),
+		"point_up": 		loadImage("emoji/point_up.png"),
+		"point_down": 		loadImage("emoji/point_down.png"),
+		"point_left": 		loadImage("emoji/point_left.png"),
+		"point_right": 		loadImage("emoji/point_right.png"),
+		"point_up_2":		loadImage("emoji/point_up_2.png"),
+		"wave": 			loadImage("emoji/wave.png"),
+		"inbox_tray":		loadImage("emoji/inbox_tray.png"),
+		"outbox_tray":		loadImage("emoji/outbox_tray.png"),
+		"koko":				loadImage("emoji/koko.png"),
+		"clock":			loadImage("emoji/clock.png"),
+		"left_right_arrow":	loadImage("emoji/left_right_arrow.png"),
+		"question":			loadImage("emoji/question.png"),
+		"grey_question":	loadImage("emoji/grey_question.png"),
 		
-		"test_tube":	loadImage("emoji/test_tube.png"),
-		"bulb":			loadImage("emoji/bulb.png"),
-		"writing_hand":	loadImage("emoji/writing_hand.png"),
-		"wave": 		loadImage("emoji/wave.png"),
+		"test_tube":		loadImage("emoji/test_tube.png"),
+		"bulb":				loadImage("emoji/bulb.png"),
+		"book":				loadImage("emoji/book.png"),
+		"writing_hand":		loadImage("emoji/writing_hand.png"),
+		"hammer": 			loadImage("emoji/hammer.png"),
+		"wrench": 			loadImage("emoji/wrench.png"),
+		"tools": 			loadImage("emoji/tools.png"),
 		
-		"computer":		loadImage("emoji/computer.png"),
-		"scroll":		loadImage("emoji/scroll.png"),
+		"computer":			loadImage("emoji/computer.png"),
+		"scroll":			loadImage("emoji/scroll.png"),
+		
+		"seedling":			loadImage("emoji/seedling.png"),
+		"checkered_flag": 	loadImage("emoji/checkered_flag.png"),
 		
 		" ":   loadImage("emoji/space.png"),
 		"ERROR":  loadImage("emoji/NO_EMOJI.png"),
@@ -101,6 +116,15 @@ function transcribeText(text){
 			textlist.push(cchar);
 		}
 	}
+	// with no spaces, the whole document will be one big word
+	if (!SPACES_DRAWN){
+		for (var i = textlist.length - 1; i >= 0; i--){
+			if (textlist[i] == " "){
+				textlist.splice(i, 1);
+			}
+		}
+	}
+	
 	// Its janky but this just add a space to the end so the last (or only) word is seen as a word
 	textlist.push(" ");
 	
@@ -144,12 +168,14 @@ function transcribeText(text){
 			currword = [];
 			
 		}else if (cchar == "\n"){
-/* 			var blanks_to_insert = TEXT_COLUMNS - (currword.length + % TEXT_COLUMNS);
+			textlist.splice(i,1);
+			var blanks_to_insert = TEXT_COLUMNS - (i % TEXT_COLUMNS);
 			for (var q = 0; q < blanks_to_insert; q++){
 				textlist.splice(i, 0, " ");
 				i++;
 			}
-			currword = []; */
+			currword = [];
+			currspaceind = i;
 			
 		}else{
 			currword.push(cchar);
