@@ -7,11 +7,11 @@ GLYPHS = {
 	},
 	"bee": {
 		"aliases": ["b"],
-		"use": "uniliteral /b/, 'be'"
+		"use": "uniliteral /b/, be"
 	},
 	"bell": {
 		"aliases": ["bl"],
-		"use": "biliteral /bl/, '-ble'"
+		"use": "biliteral /bl/, -ble"
 	},
 	"hatching_chick": {
 		"aliases": ["ch"],
@@ -67,7 +67,7 @@ GLYPHS = {
 	},
 	"raised_hand": {
 		"aliases": ["nd"],
-		"use": "biliteral /nd/, 'and'"
+		"use": "biliteral /nd/, and"
 	},
 	"horse": {
 		"aliases": ["ng"],
@@ -125,9 +125,13 @@ GLYPHS = {
 		"aliases": ["shp"],
 		"use": "biliteral /ʃp/ ('ship')"
 	},
+	"sun_with_face": {
+		"aliases": ["sun", "sn"],
+		"use": "biliteral /sn/"
+	},
 	"tea": {
 		"aliases": ["t"],
-		"use": "uniliteral /t/, 'to'"
+		"use": "uniliteral /t/, to"
 	},
 	"coffee": {
 		"aliases": ["T"],
@@ -135,7 +139,7 @@ GLYPHS = {
 	},
 	"thread": {
 		"aliases": ["th"],
-		"use": "uniliteral /θ/, /ð/, 'the'"
+		"use": "uniliteral /θ/, /ð/, the"
 	},
 	"tree": {
 		"aliases": ["tr"],
@@ -143,7 +147,7 @@ GLYPHS = {
 	},
 	"ocean": {
 		"aliases": ["v"],
-		"use": "uniliteral /v/, 'of'"
+		"use": "uniliteral /v/, of"
 	},
 	"whale": {
 		"aliases": ["w"],
@@ -177,11 +181,11 @@ GLYPHS = {
 	},
 	"inbox_tray": {
 		"aliases": ["in"],
-		"use": "'in', 'input', 'get', 'receive'"
+		"use": "in, input, get, receive"
 	},
 	"outbox_tray": {
 		"aliases": ["out"],
-		"use": "'out', 'output'"
+		"use": "out, output"
 	},
 	"no_entry_sign": {
 		"aliases": ["not", "no"],
@@ -189,11 +193,20 @@ GLYPHS = {
 	},
 	"chart_with_upwards_trend": {
 		"aliases": ["more"],
-		"use": "'more', 'most', 'very', etc."
+		"use": "more, most, very, etc."
 	},
 	"chart_with_downwards_trend": {
 		"aliases": ["less"],
-		"use": "'less', 'least', 'hardly', etc."
+		"use": "less, least, hardly, etc."
+	},
+	"thumbsup": {
+		"use": "good"
+	},
+	"thumbsdown": {
+		"use": "bad"
+	},
+	"100": {
+		"use": "a positive intensifier, e.g. 'swag', 'cool'..."
 	},
 	"question": {
 	},
@@ -202,16 +215,156 @@ GLYPHS = {
 	"clock": {
 		"use": "words relating to time, 'now', 'then'..."
 	},
+	"timer": {
+		"use": "\""
+	},
 	"koko": {
 	},
 	
 	"1234": {
-		"use": "'amount', 'number'"
+		"use": "amount, number"
 	},
 	"abcd": {
 	},
+	"symbols": {
+		"use": "characters, glyphs" 
+	},
+	"a": {
+		"use": "\""
+	},
 	"accept": {
-		"use": "'can', 'able'"
+		"use": "can, able, possible"
+	},
+	"arrow_up":{
+	},
+	"arrow_down":{
+	},
+	"arrow_left":{
+	},
+	"arrow_right":{
+	},
+	"arrow_heading_up":{
+	},
+	"arrow_heading_down":{
+	},
+	"left_right_arrow": {
+	},
+	"bird": {
+		"use": "archaic uniliteral /dʒ/"
+	},
+	"book": {
+	},
+	"bulb": {
+	},
+	"bust_in_silhouette": {
+		"use": "people/roles with suffix '-er'"
+	},
+	"camera": {
+	},
+	"checkered_flag": {
+		"use": "end, finish, done"
+	},
+	"cloud_lightning": {
+	},
+	"computer": {
+	},
+	"construction_site": {
+	},
+	"dash": {
+	},
+	"electric_plug": {
+	},
+	"eyes": {
+		"use": "see, look"
+	},
+	"family": {
+		"use": "group"
+	},
+	"game_die": {
+	},
+	"globe_with_meridians": {
+		"aliases": ["internet"],
+		"use": "internet, web"
+	},
+	"hammer": {
+	},
+	"handshake": {
+		"use": "agreement, collaboration"
+	},
+	"hug": {
+	},
+	"loud_sound": {
+	},
+	"map": {
+	},
+	"mobile_phone": {
+	},
+	"muscle": {
+		"use": "strong, hard"
+	},
+	"musical_note": {
+	},
+	"notes": {
+	},
+	"office": {
+		"use": "companies, organizations"
+	},
+	"pinching_hand": {
+		"use": "small, 'micro-'"
+	},
+	"pray": {
+		"use": "hope, wish"
+	},
+	"printer": {
+	},
+	"robot": {
+		"use": "machines with suffix '-er', e.g. 'printer', 'dishwasher', 'assembler'"
+	},
+	"scales": {
+	},
+	"scroll": {
+		"use": "body of text, paragraph, etc."
+	},
+	"seedling": {
+		"use": "begin, start, initial"
+	},
+	"shopping_cart": {
+	},
+	"sound": {
+	},
+	"speaking_head": {
+		"use": "speech, spoken language"
+	},
+	"speech_balloon": {
+	},
+	"test_tube": {
+		"use": "try, test, research, experiment"
+	},
+	"thought_balloon": {
+		"use": "idea, concept"
+	},
+	"tongue": {
+		"use": "language, licking"
+	},
+	"tools": {
+	},
+	"tooth": {
+	},
+	"wave": {
+		"use": "greetings, 'hello'"
+	},
+	"white_heart": {
+		"use": "soul, mind, inner workings"
+	},
+	"wrench": {
+	},
+	"writing_hand": {
+	},
+	
+	"confounded": {
+	},
+	"relaxed": {
+		"use": "calm"
 	},
 	
 	"NO_EMOJI": {}

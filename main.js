@@ -1,14 +1,20 @@
-TEXT_COLUMNS = 15;
+TEXT_COLUMNS = 32;
 SPACES_DRAWN = true;
-CHAR_DIM = 72;
+TRANSPARENT = true;
+CHAR_DIM = 48;
 CHAR_PADDING = 4;
 
 function setup(){
 	document.getElementById("btn").onclick = function(){
 		SPACES_DRAWN = document.getElementById("spacecb").checked;
+		TRANSPARENT = document.getElementById("transcb").checked;
 		var text = document.getElementById("textarea").value;
 		transcribeText(text);
 	}
+	
+	textAlign(LEFT, TOP)
+	textSize(CHAR_DIM);
+	fill(255)
 }
 
 function preload(){
@@ -52,86 +58,6 @@ function preload(){
 			usecell.innerHTML = glyph.use
 		}
 	}
-	
-	
-	
-/* 		// phonetic glyphs first
-		"'":   loadImage("emoji/eye.png"),
-		"b":   loadImage("emoji/bee.png"),
-		"bl":  loadImage("emoji/bell.png"),
-		"ch":  loadImage("emoji/hatching_chick.png"),
-		"d":   loadImage("emoji/door.png"),
-		"f":   loadImage("emoji/fire.png"),
-		"g":   loadImage("emoji/gear.png"),
-		"h":   loadImage("emoji/rabbit.png"),
-		"j":   loadImage("emoji/jar.png"),
-		"k":   loadImage("emoji/key.png"),
-		"kl":  loadImage("emoji/red_car.png"),
-		"kr":  loadImage("emoji/call_me.png"),
-		"l":   loadImage("emoji/leaves.png"),
-		"m":   loadImage("emoji/house.png"),
-		"n":   loadImage("emoji/leg.png"),
-		"nd":  loadImage("emoji/raised_hand.png"),
-		"ng":  loadImage("emoji/horse.png"),
-		"ns":  loadImage("emoji/sauropod.png"),
-		"nt":  loadImage("emoji/knot.png"),
-		"p":   loadImage("emoji/feet.png"),
-		"pl":  loadImage("emoji/person_swimming.png"),
-		"pr":  loadImage("emoji/pear.png"),
-		"r":   loadImage("emoji/ear.png"),
-		"s":   loadImage("emoji/ice_cube.png"),
-		"sb":  loadImage("emoji/spoon.png"),
-		"sd":  loadImage("emoji/star.png"),
-		"sg":  loadImage("emoji/socks.png"),
-		"sh":  loadImage("emoji/athletic_shoe.png"),
-		"shn": loadImage("emoji/sparkles.png"),
-		"shp": loadImage("emoji/sailboat.png"),
-		"t":   loadImage("emoji/tea.png"),
-		"T":   loadImage("emoji/coffee.png"),
-		"th":  loadImage("emoji/thread.png"),
-		"tr":  loadImage("emoji/tree.png"),
-		"v":   loadImage("emoji/ocean.png"),
-		"w":   loadImage("emoji/whale.png"),
-		"y":   loadImage("emoji/sweet_potato.png"),
-		"z":   loadImage("emoji/cloud.png"),
-		
-		// logograms next...
-		// (I'll just add them as they are needed)
-		"point_up": 		loadImage("emoji/point_up.png"),
-		"point_down": 		loadImage("emoji/point_down.png"),
-		"point_left": 		loadImage("emoji/point_left.png"),
-		"point_right": 		loadImage("emoji/point_right.png"),
-		"point_up_2":		loadImage("emoji/point_up_2.png"),
-		"wave": 			loadImage("emoji/wave.png"),
-		"inbox_tray":		loadImage("emoji/inbox_tray.png"),
-		"outbox_tray":		loadImage("emoji/outbox_tray.png"),
-		"koko":				loadImage("emoji/koko.png"),
-		"clock":			loadImage("emoji/clock.png"),
-		"left_right_arrow":	loadImage("emoji/left_right_arrow.png"),
-		"question":			loadImage("emoji/question.png"),
-		"grey_question":	loadImage("emoji/grey_question.png"),
-		"no_entry_sign":	loadImage("emoji/no_entry_sign.png"),
-		
-		"test_tube":		loadImage("emoji/test_tube.png"),
-		"bulb":				loadImage("emoji/bulb.png"),
-		"book":				loadImage("emoji/book.png"),
-		"writing_hand":		loadImage("emoji/writing_hand.png"),
-		"hammer": 			loadImage("emoji/hammer.png"),
-		"wrench": 			loadImage("emoji/wrench.png"),
-		"tools": 			loadImage("emoji/tools.png"),
-		"floppy_disk": 		loadImage("emoji/floppy_disk.png"),
-		"handshake": 		loadImage("emoji/handshake.png"),
-		
-		"computer":			loadImage("emoji/computer.png"),
-		"robot":			loadImage("emoji/robot.png"),
-		"scroll":			loadImage("emoji/scroll.png"),
-		"family":			loadImage("emoji/family.png"),
-		
-		"seedling":			loadImage("emoji/seedling.png"),
-		"checkered_flag": 	loadImage("emoji/checkered_flag.png"),
-		
-		"ERROR":  loadImage("emoji/NO_EMOJI.png"),
-	} */
 }
 
 function draw(){
@@ -147,6 +73,7 @@ function transcribeText(text){
 	// first we will just seperate the characters in brackets into a 1-dimensional list
 	for (var i = 0; i < text.length; i++){
 		var cchar = text.charAt(i);
+		var ccode = text.charCodeAt(i);
 		if (cchar == "["){
 			inbracket = true; continue;
 		}
@@ -171,8 +98,22 @@ function transcribeText(text){
 		}
 	}
 	
+	// all characters that are not associated with an emoji are converted to fullwidth		
+	for (var i = 0; i < textlist.length; i++){
+		var cword = textlist[i];
+		if (GLYPHS[cword]){ continue; }
+		
+		var shiftCharCode = Δ => c => String.fromCharCode(c.charCodeAt(0) + Δ);
+		var toFullWidth = str => str.replace(/[!-~]/g, shiftCharCode(0xFEE0));
+		var toHalfWidth = str => str.replace(/[！-～]/g, shiftCharCode(-0xFEE0));
+		
+		textlist[i] = toFullWidth(cword);
+	}
+	
 	// Its janky but this just add a space to the end so the last (or only) word is seen as a word
 	textlist.push(" ");
+	
+	print(textlist)
 	
 	// to word wrap, we will see if the current space character is on the same row as the last one
 	// if they are on different rows, then we know that the word has spilled into the next row.
@@ -238,6 +179,8 @@ function transcribeText(text){
 	resizeCanvas( canvaswidth, canvasheight );
 	clear();
 	
+	if (!TRANSPARENT){ background(54,57,63); }
+	
 	for (var i = 0; i < textlist.length; i++){
 		var x = ( i % TEXT_COLUMNS );
 		var y = Math.floor( i / TEXT_COLUMNS );
@@ -246,9 +189,15 @@ function transcribeText(text){
 }
 
 function drawGlyph(glyphname, column, row){
-	if (glyphname == " "){ return }
-	var img = GLYPHS[glyphname] ? GLYPHS[glyphname].img : GLYPHS["NO_EMOJI"].img;
+	if (glyphname == " " || glyphname == "\n"){ return }
 	var x = CHAR_PADDING + ( column * ( CHAR_DIM + CHAR_PADDING ) );
-	var y = CHAR_PADDING + ( row * (CHAR_DIM + CHAR_PADDING ))
+	var y = CHAR_PADDING + ( row * (CHAR_DIM + CHAR_PADDING ))	
+	
+	if (glyphname.charCodeAt(0) >= 0xFF00 && glyphname.charCodeAt(0) <= 0xFFEF){
+		text(glyphname, x, y);
+		return;
+	}
+	
+	var img = GLYPHS[glyphname] ? GLYPHS[glyphname].img : GLYPHS["NO_EMOJI"].img;
 	image(img,x,y,CHAR_DIM,CHAR_DIM);
 }
