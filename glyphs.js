@@ -266,11 +266,14 @@ GLYPHS = {
 	},
 	"cloud_lightning": {
 	},
+	"crescent_moon": {
+	},
 	"computer": {
 	},
 	"construction_site": {
 	},
 	"dash": {
+		"use": "speed, fast"
 	},
 	"electric_plug": {
 	},
@@ -295,6 +298,9 @@ GLYPHS = {
 	},
 	"loud_sound": {
 	},
+	"mag": {
+		"use": "investigation, inquiry"
+	},
 	"map": {
 	},
 	"mobile_phone": {
@@ -309,6 +315,14 @@ GLYPHS = {
 	"office": {
 		"use": "companies, organizations"
 	},
+	"pencil": {
+	},
+	"person_lifting_weights": {
+	},
+	"person_running": {
+	},
+	"person_walking": {
+	},
 	"pinching_hand": {
 		"use": "small, 'micro-'"
 	},
@@ -317,8 +331,12 @@ GLYPHS = {
 	},
 	"printer": {
 	},
+	"pushpin": {
+	},
 	"robot": {
 		"use": "machines with suffix '-er', e.g. 'printer', 'dishwasher', 'assembler'"
+	},
+	"round_pushpin": {
 	},
 	"scales": {
 	},
@@ -329,6 +347,8 @@ GLYPHS = {
 		"use": "begin, start, initial"
 	},
 	"shopping_cart": {
+	},
+	"snail": {
 	},
 	"sound": {
 	},
@@ -341,7 +361,7 @@ GLYPHS = {
 		"use": "try, test, research, experiment"
 	},
 	"thought_balloon": {
-		"use": "idea, concept"
+		"use": "thought, idea, concept"
 	},
 	"tongue": {
 		"use": "language, licking"

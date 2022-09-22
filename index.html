@@ -9,13 +9,17 @@
 <body>
 	<div class="maindiv" id="maindiv">
 			<form>
-			  <textarea rows="5" cols="60" name="text" id = "textarea" placeholder="Enter text"></textarea>
-			  <br/>
-			  <button type="button" id="btn">Transcribe</button>
-			  <input type="checkbox" id="spacecb" name="spacecb">
-			  <label for="spacecb">Render spaces in output</label><br>
-			  <input type="checkbox" id="transcb" name="transcb">
-			  <label for="spacecb">Transparent background</label><br>
+				<textarea rows="5" cols="60" name="text" id = "textarea" placeholder="Enter text"></textarea>
+				<br/>
+				<button type="button" id="btn">Transcribe</button>
+				<input type="checkbox" id="spacecb" name="spacecb">
+				<label for="spacecb">Render spaces in output</label><br>
+				<input type="checkbox" id="transcb" name="transcb">
+				<label for="spacecb">Transparent background</label><br>
+				<label for="colnum">Columns:</label>
+				<input type="number" id="colnum" name="colnum" min="2" max="128" value="16" style="width:100px"> 
+				<label for="colnum">Character size:</label>
+				<input type="number" id="charsizenum" name="charsizenum" min="8" max="128" value="72" style="width:100px"> 
 			</form>
 		<main>
 		</main>

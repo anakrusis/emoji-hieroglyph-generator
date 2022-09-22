@@ -5,16 +5,27 @@ CHAR_DIM = 48;
 CHAR_PADDING = 4;
 
 function setup(){
-	document.getElementById("btn").onclick = function(){
-		SPACES_DRAWN = document.getElementById("spacecb").checked;
-		TRANSPARENT = document.getElementById("transcb").checked;
-		var text = document.getElementById("textarea").value;
-		transcribeText(text);
-	}
-	
 	textAlign(LEFT, TOP)
 	textSize(CHAR_DIM);
 	fill(255)
+	
+	document.getElementById("btn").onclick = function(){
+		SPACES_DRAWN = document.getElementById("spacecb").checked;
+		TRANSPARENT = document.getElementById("transcb").checked;
+		
+		var colnum = document.getElementById("colnum").value;
+		colnum = Math.max( colnum, 2 ); colnum = Math.min( colnum, 128 );
+		document.getElementById("colnum").value = colnum;
+		TEXT_COLUMNS = colnum;
+		
+		var csn = document.getElementById("charsizenum").value;
+		csn = Math.max( csn, 8 ); csn = Math.min( csn, 128 );
+		document.getElementById("charsizenum").value = csn;
+		CHAR_DIM = csn;
+		
+		var text = document.getElementById("textarea").value;
+		transcribeText(text);
+	}
 }
 
 function preload(){
