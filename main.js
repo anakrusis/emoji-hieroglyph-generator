@@ -12,8 +12,50 @@ function setup(){
 }
 
 function preload(){
-	GLYPHS = {
-		// phonetic glyphs first
+	var dict = document.getElementById("dictionary")
+	
+	for (key in GLYPHS) {
+		var names = "[" + key + "], "
+		glyph = GLYPHS[key];
+		// loads image associated with glyph's name
+		glyph.img = loadImage("emoji/" + key + ".png");
+		
+		if (key == "NO_EMOJI"){ continue; }
+		
+		// maps all aliases to the same pointer as the glyph itself
+		if (glyph.aliases){
+			for (var i = 0; i < glyph.aliases.length; i++){
+				var ca = glyph.aliases[i];
+				GLYPHS[ca] = glyph;
+				
+				var aliasstring = ca;
+				if (aliasstring.length > 1){
+					aliasstring = "[" + aliasstring + "]";
+				}
+				
+				names += aliasstring + ", ";
+			}
+		}
+		// gets rid of the extra comma and space at the end
+		names = names.slice(0, -2)
+		
+		// generates a dictionary entry for every emoji
+		var newrow = dict.insertRow();
+		var namecell = newrow.insertCell();
+		namecell.innerHTML = names;
+		
+		var imgcell = newrow.insertCell();
+		imgcell.innerHTML = "<img src='emoji/" + key + ".png'>"
+		
+		var usecell = newrow.insertCell();
+		if (glyph.use){
+			usecell.innerHTML = glyph.use
+		}
+	}
+	
+	
+	
+/* 		// phonetic glyphs first
 		"'":   loadImage("emoji/eye.png"),
 		"b":   loadImage("emoji/bee.png"),
 		"bl":  loadImage("emoji/bell.png"),
@@ -68,6 +110,7 @@ function preload(){
 		"left_right_arrow":	loadImage("emoji/left_right_arrow.png"),
 		"question":			loadImage("emoji/question.png"),
 		"grey_question":	loadImage("emoji/grey_question.png"),
+		"no_entry_sign":	loadImage("emoji/no_entry_sign.png"),
 		
 		"test_tube":		loadImage("emoji/test_tube.png"),
 		"bulb":				loadImage("emoji/bulb.png"),
@@ -76,16 +119,19 @@ function preload(){
 		"hammer": 			loadImage("emoji/hammer.png"),
 		"wrench": 			loadImage("emoji/wrench.png"),
 		"tools": 			loadImage("emoji/tools.png"),
+		"floppy_disk": 		loadImage("emoji/floppy_disk.png"),
+		"handshake": 		loadImage("emoji/handshake.png"),
 		
 		"computer":			loadImage("emoji/computer.png"),
+		"robot":			loadImage("emoji/robot.png"),
 		"scroll":			loadImage("emoji/scroll.png"),
+		"family":			loadImage("emoji/family.png"),
 		
 		"seedling":			loadImage("emoji/seedling.png"),
 		"checkered_flag": 	loadImage("emoji/checkered_flag.png"),
 		
-		" ":   loadImage("emoji/space.png"),
 		"ERROR":  loadImage("emoji/NO_EMOJI.png"),
-	}
+	} */
 }
 
 function draw(){
@@ -201,7 +247,7 @@ function transcribeText(text){
 
 function drawGlyph(glyphname, column, row){
 	if (glyphname == " "){ return }
-	var img = GLYPHS[glyphname] ? GLYPHS[glyphname] : GLYPHS["ERROR"];
+	var img = GLYPHS[glyphname] ? GLYPHS[glyphname].img : GLYPHS["NO_EMOJI"].img;
 	var x = CHAR_PADDING + ( column * ( CHAR_DIM + CHAR_PADDING ) );
 	var y = CHAR_PADDING + ( row * (CHAR_DIM + CHAR_PADDING ))
 	image(img,x,y,CHAR_DIM,CHAR_DIM);
