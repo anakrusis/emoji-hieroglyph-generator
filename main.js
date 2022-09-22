@@ -4,11 +4,7 @@ TRANSPARENT = true;
 CHAR_DIM = 48;
 CHAR_PADDING = 4;
 
-function setup(){
-	textAlign(LEFT, TOP)
-	textSize(CHAR_DIM);
-	fill(255)
-	
+function setup(){	
 	document.getElementById("btn").onclick = function(){
 		SPACES_DRAWN = document.getElementById("spacecb").checked;
 		TRANSPARENT = document.getElementById("transcb").checked;
@@ -22,6 +18,10 @@ function setup(){
 		csn = Math.max( csn, 8 ); csn = Math.min( csn, 128 );
 		document.getElementById("charsizenum").value = csn;
 		CHAR_DIM = csn;
+		
+		textAlign(LEFT, TOP)
+		textSize(CHAR_DIM);
+		fill(255)
 		
 		var text = document.getElementById("textarea").value;
 		transcribeText(text);

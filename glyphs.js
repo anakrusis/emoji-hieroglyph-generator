@@ -49,6 +49,10 @@ GLYPHS = {
 		"aliases": ["kr"],
 		"use": "biliteral /kr/"
 	},
+	"axe": {
+		"aliases": ["ks"],
+		"use": "biliteral /ks/"
+	},
 	"leaves": {
 		"aliases": ["l"],
 		"use": "uniliteral /l/"
@@ -235,6 +239,8 @@ GLYPHS = {
 	"accept": {
 		"use": "can, able, possible"
 	},
+	"airplane": {
+	},
 	"arrow_up":{
 	},
 	"arrow_down":{
@@ -315,6 +321,9 @@ GLYPHS = {
 	"office": {
 		"use": "companies, organizations"
 	},
+	"peanuts": {
+		"use": "nuts of all varieties"
+	},
 	"pencil": {
 	},
 	"person_lifting_weights": {
@@ -333,8 +342,13 @@ GLYPHS = {
 	},
 	"pushpin": {
 	},
+	"raised_hands": {
+		"use": "excitement"
+	},
 	"robot": {
 		"use": "machines with suffix '-er', e.g. 'printer', 'dishwasher', 'assembler'"
+	},
+	"rocket": {
 	},
 	"round_pushpin": {
 	},
@@ -357,6 +371,8 @@ GLYPHS = {
 	},
 	"speech_balloon": {
 	},
+	"swan": {
+	},
 	"test_tube": {
 		"use": "try, test, research, experiment"
 	},
@@ -375,6 +391,9 @@ GLYPHS = {
 	},
 	"white_heart": {
 		"use": "soul, mind, inner workings"
+	},
+	"woman": {
+		"use": "can be used after people's names"
 	},
 	"wrench": {
 	},
