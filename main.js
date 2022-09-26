@@ -192,10 +192,28 @@ function transcribeText(text){
 	
 	if (!TRANSPARENT){ background(54,57,63); }
 	
+	var copydiv = document.getElementById("copydiv")
+	copydiv.innerHTML = "";
+	
 	for (var i = 0; i < textlist.length; i++){
 		var x = ( i % TEXT_COLUMNS );
 		var y = Math.floor( i / TEXT_COLUMNS );
-		drawGlyph(textlist[i], x, y);
+		var currentglyph = textlist[i];
+		drawGlyph(currentglyph, x, y);
+		
+		// fullwidth text chars are written directly
+		if (currentglyph.charCodeAt(0) >= 0xFF00 && currentglyph.charCodeAt(0) <= 0xFFEF){
+			copydiv.innerHTML += currentglyph;
+			continue;
+		}
+		if (!GLYPHS[currentglyph]){ 
+			copydiv.innerHTML += "　"; continue; 
+		}
+		var emoje = GLYPHS[currentglyph].emoji;
+		if (!emoje){ 
+			copydiv.innerHTML += "　"; continue; 
+		}
+		copydiv.innerHTML += emoje;
 	}
 }
 
