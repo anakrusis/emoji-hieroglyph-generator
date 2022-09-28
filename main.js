@@ -124,7 +124,7 @@ function transcribeText(text){
 	// Its janky but this just add a space to the end so the last (or only) word is seen as a word
 	textlist.push(" ");
 	
-	print(textlist)
+	//print(textlist)
 	
 	// to word wrap, we will see if the current space character is on the same row as the last one
 	// if they are on different rows, then we know that the word has spilled into the next row.
@@ -142,6 +142,8 @@ function transcribeText(text){
 			
 			lastspacerow = Math.floor(lastspaceind / TEXT_COLUMNS );
 			currspacerow = Math.floor(currspaceind / TEXT_COLUMNS );
+			lastspacecol = lastspaceind % TEXT_COLUMNS;
+			currspacecol = currspaceind % TEXT_COLUMNS;
 			
 			if (lastspacerow != currspacerow){
 				
@@ -153,7 +155,7 @@ function transcribeText(text){
 				
 				// otherwise, to make words appear on the next line, we give them
 				// the complement number of the columns count.
-				if (currword.length <= TEXT_COLUMNS ){
+				if (currword.length <= TEXT_COLUMNS && lastspacecol != 0 ){					
 					var blanks_to_insert = TEXT_COLUMNS - (lastspaceind % TEXT_COLUMNS) - 1;
 					console.log("bti: " + blanks_to_insert);
 					for (var q = 0; q < blanks_to_insert; q++){
@@ -161,8 +163,17 @@ function transcribeText(text){
 						i++;
 						currspaceind++;
 					}
-				}
+				}/* else if (currword.length == TEXT_COLUMNS){
+					textlist.splice(currspaceind, 1)
+					i--;
+				} */
 			}
+			if (currspacecol == 0){
+				console.log("removing space at " + currspaceind);
+				textlist.splice(currspaceind, 1)
+				i--;
+			}
+		
 			currword = [];
 			
 		}else if (cchar == "\n"){
@@ -183,7 +194,7 @@ function transcribeText(text){
 	// removes the extra space character we added earlier
 	textlist.pop();
 	
-	var rows = 1 + Math.floor( textlist.length / TEXT_COLUMNS );
+	var rows = 1 + Math.floor( (textlist.length - 1) / TEXT_COLUMNS );
 	
 	var canvaswidth = CHAR_PADDING + (TEXT_COLUMNS * (CHAR_DIM + CHAR_PADDING))
 	var canvasheight = CHAR_PADDING + (rows * (CHAR_DIM + CHAR_PADDING))
