@@ -378,6 +378,8 @@ GLYPHS = {
 		"emoji": "🃏"
 	},
 	"book": {
+		"emoji": "📖",
+		"use": "read"
 	},
 	"briefcase": {
 		"emoji": "💼"
@@ -531,6 +533,7 @@ GLYPHS = {
 		"use": "small, 'micro-'"
 	},
 	"pray": {
+		"emoji": "🙏",
 		"use": "hope, wish"
 	},
 	"printer": {
@@ -614,6 +617,7 @@ GLYPHS = {
 		"emoji": "🏆"
 	},
 	"wave": {
+		"emoji": "👋",
 		"use": "greetings, 'hello'"
 	},
 	"white_heart": {

@@ -143,7 +143,6 @@ function transcribeText(text){
 			lastspacerow = Math.floor(lastspaceind / TEXT_COLUMNS );
 			currspacerow = Math.floor(currspaceind / TEXT_COLUMNS );
 			lastspacecol = lastspaceind % TEXT_COLUMNS;
-			currspacecol = currspaceind % TEXT_COLUMNS;
 			
 			if (lastspacerow != currspacerow){
 				
@@ -163,26 +162,28 @@ function transcribeText(text){
 						i++;
 						currspaceind++;
 					}
-				}/* else if (currword.length == TEXT_COLUMNS){
-					textlist.splice(currspaceind, 1)
-					i--;
-				} */
+				}
 			}
+			// if a space occurs directly on the line break (that is, column 0) then its not needed
+			currspacecol = currspaceind % TEXT_COLUMNS;
 			if (currspacecol == 0){
-				console.log("removing space at " + currspaceind);
+				console.log("removing space at " + currspaceind + " csc: " + currspacecol);
 				textlist.splice(currspaceind, 1)
 				i--;
 			}
 		
 			currword = [];
 			
+		// Todo make this fully functional
 		}else if (cchar == "\n"){
 			textlist.splice(i,1);
+
 			var blanks_to_insert = TEXT_COLUMNS - (i % TEXT_COLUMNS);
 			for (var q = 0; q < blanks_to_insert; q++){
 				textlist.splice(i, 0, " ");
 				i++;
 			}
+			
 			currword = [];
 			currspaceind = i;
 			
@@ -191,8 +192,10 @@ function transcribeText(text){
 		}
 		i++;
 	}
-	// removes the extra space character we added earlier
-	textlist.pop();
+	// removes the extra space character we added earlier, if still present
+	if (textlist[ textlist.length - 1 ] == " "){
+		textlist.pop();
+	}
 	
 	var rows = 1 + Math.floor( (textlist.length - 1) / TEXT_COLUMNS );
 	
@@ -212,11 +215,17 @@ function transcribeText(text){
 		var currentglyph = textlist[i];
 		drawGlyph(currentglyph, x, y);
 		
+		if (x == 0 && y > 0){
+			copydiv.innerHTML += "<br>";
+		}
+		
+		// puts text into the copyable area beneath the image
 		// fullwidth text chars are written directly
 		if (currentglyph.charCodeAt(0) >= 0xFF00 && currentglyph.charCodeAt(0) <= 0xFFEF){
 			copydiv.innerHTML += currentglyph;
 			continue;
 		}
+		// unknown emoji are just left blank
 		if (!GLYPHS[currentglyph]){ 
 			copydiv.innerHTML += "　"; continue; 
 		}
