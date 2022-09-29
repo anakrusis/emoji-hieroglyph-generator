@@ -4,276 +4,263 @@ GLYPHS = {
 	"eye": {
 		"aliases": ["'"],
 		"emoji": "👁",
-		"use": "placeholder for words with initial vowel"
+		"use": { "phonetic": "placeholder for words with initial vowel" }
 	},
 	"bee": {
 		"aliases": ["b"],
 		"emoji": "🐝",
-		"use": "uniliteral /b/, be"
+		"use": { "phonetic": "uniliteral /b/" }
 	},
 	"bell": {
 		"aliases": ["bl"],
 		"emoji": "🔔",
-		"use": "biliteral /bl/, -ble"
+		"use": { "phonetic": "biliteral /bl/" }
 	},
 	"hatching_chick": {
 		"aliases": ["ch"],
 		"emoji": "🐣",
-		"use": "uniliteral /tʃ/"
+		"use": { "phonetic": "uniliteral /tʃ/" }
 	},
 	"door": {
 		"aliases": ["d"],
 		"emoji": "🚪",
-		"use": "uniliteral /d/"
+		"use": { "phonetic": "uniliteral /d/" }
 	},
 	"fire": {
 		"aliases": ["f"],
 		"emoji": "🔥",
-		"use": "uniliteral /f/"
+		"use": { "phonetic": "uniliteral /f/" }
 	},
 	"gear": {
 		"aliases": ["g"],
 		"emoji": "⚙",
-		"use": "uniliteral /g/"
+		"use": { "phonetic": "uniliteral /g/" }
 	},
 	"rabbit": {
 		"aliases": ["h"],
 		"emoji": "🐰",
-		"use": "uniliteral /h/ ('hare')"
+		"use": { "phonetic": "uniliteral /h/ <br>(from 'hare')" }
 	},
 	"jar": {
 		"aliases": ["j"],
 		"emoji": "🫙",
-		"use": "uniliteral /dʒ/, /ʒ/"
+		"use": { "phonetic": "uniliteral /dʒ/, /ʒ/" }
 	},
 	"key": {
 		"aliases": ["k"],
 		"emoji": "🔑",
-		"use": "uniliteral /k/"
+		"use": { "phonetic": "uniliteral /k/" }
 	},
 	"call_me": {
 		"aliases": ["kl"],
 		"emoji": "🤙",
-		"use": "biliteral /kl/"
+		"use": { "phonetic": "biliteral /kl/" }
 	},
 	"red_car": {
 		"aliases": ["kr"],
 		"emoji": "🚗",
-		"use": "biliteral /kr/"
+		"use": { "phonetic": "biliteral /kr/" }
 	},
 	"axe": {
 		"aliases": ["ks"],
 		"emoji": "🪓",
-		"use": "biliteral /ks/"
+		"use": { "phonetic": "biliteral /ks/" }
 	},
 	"leaves": {
 		"aliases": ["l"],
 		"emoji": "🍃",
-		"use": "uniliteral /l/"
+		"use": { "phonetic": "uniliteral /l/" }
 	},
 	"house": {
 		"aliases": ["m"],
 		"emoji": "🏠",
-		"use": "uniliteral /m/ ('home')"
+		"use": { "phonetic": "uniliteral /m/ <br>(from 'home')" }
 	},
 	"mountain": {
 		"aliases": ["mount", "mnt"],
 		"emoji": "⛰",
-		"use": "triliteral /mnt/"
+		"use": { "phonetic": "triliteral /mnt/" }
 	},
 	"leg": {
 		"aliases": ["n"],
 		"emoji": "🦵",
-		"use": "uniliteral /n/ ('knee')"
+		"use": { "phonetic": "uniliteral /n/ <br>(from 'knee')" }
 	},
 	"raised_hand": {
 		"aliases": ["nd"],
 		"emoji": "✋",
-		"use": "biliteral /nd/, and"
+		"use": { "phonetic": "biliteral /nd/" }
 	},
 	"horse": {
 		"aliases": ["ng"],
 		"emoji": "🐴",
-		"use": "uniliteral /ŋ/ ('nag')"
+		"use": { "phonetic": "uniliteral /ŋ/ <br>(from 'nag')" }
 	},
 	"sauropod": {
 		"aliases": ["ns"],
 		"emoji": "🦕",
-		"use": "biliteral /ns/ ('Nessie')"
+		"use": { "phonetic": "biliteral /ns/ <br>(from 'Nessie')" }
 	},
 	"knot": {
 		"aliases": ["nt"],
 		"emoji": "🪢",
-		"use": "biliteral /nt/"
+		"use": { "phonetic": "biliteral /nt/" }
 	},
 	"feet": {
 		"aliases": ["p"],
 		"emoji": "🐾",
-		"use": "uniliteral /p/ ('paw')"
+		"use": { "phonetic": "uniliteral /p/ <br>(from 'paw')" }
 	},
 	"person_swimming": {
 		"aliases": ["pl"],
 		"emoji": "🏊",
-		"use": "biliteral /pl/ ('pool')"
+		"use": { "phonetic": "biliteral /pl/ <br>(from 'pool')" }
 	},
 	"pear": {
 		"aliases": ["pr"],
 		"emoji": "🍐",
-		"use": "biliteral /pr/"
+		"use": { "phonetic": "biliteral /pr/" }
 	},
 	"ear": {
 		"aliases": ["r"],
 		"emoji": "👂",
-		"use": "uniliteral /r/"
+		"use": { "phonetic": "uniliteral /r/" }
 	},
 	"ice_cube": {
 		"aliases": ["s"],
 		"emoji": "🧊",
-		"use": "uniliteral /s/"
+		"use": { "phonetic": "uniliteral /s/" }
 	},
 	"spoon": {
 		"aliases": ["sp", "sb"],
 		"emoji": "🥄",
-		"use": "biliteral /sp/"
+		"use": { "phonetic": "biliteral /sp/" }
 	},
 	"star": {
 		"aliases": ["st", "sd"],
 		"emoji": "⭐",
-		"use": "biliteral /st/"
+		"use": { "phonetic": "biliteral /st/" }
 	},
 	"socks": {
 		"aliases": ["sk", "sg"],
 		"emoji": "🧦",
-		"use": "biliteral /sk/"
+		"use": { "phonetic": "biliteral /sk/" }
 	},
 	"athletic_shoe": {
 		"aliases": ["sh"],
 		"emoji": "👟",
-		"use": "uniliteral /ʃ/"
+		"use": { "phonetic": "uniliteral /ʃ/" }
 	},
 	"sparkles": {
 		"aliases": ["shn"],
 		"emoji": "✨",
-		"use": "biliteral /ʃn/ ('shine')"
+		"use": { "phonetic": "biliteral /ʃn/ <br>(from 'shine')" }
 	},
 	"sailboat": {
 		"aliases": ["shp"],
 		"emoji": "⛵",
-		"use": "biliteral /ʃp/ ('ship')"
+		"use": { "phonetic": "biliteral /ʃp/ <br>(from 'ship')" }
 	},
 	"sun_with_face": {
 		"aliases": ["sun", "sn"],
 		"emoji": "🌞",
-		"use": "biliteral /sn/"
+		"use": { "phonetic": "biliteral /sn/" }
 	},
 	"tea": {
 		"aliases": ["t"],
 		"emoji": "🍵",
-		"use": "uniliteral /t/, to"
+		"use": { "phonetic": "uniliteral /t/" }
 	},
 	"coffee": {
 		"aliases": ["T"],
 		"emoji": "☕",
-		"use": "uniliteral /ɾ/ (tapped T)"
+		"use": { "phonetic": "uniliteral /t/, especially when pronounced as flapped [ɾ]" }
 	},
 	"thread": {
 		"aliases": ["th"],
 		"emoji": "🧵",
-		"use": "uniliteral /θ/, /ð/, the"
+		"use": { "phonetic": "uniliteral /θ/, /ð/" }
 	},
 	"tree": {
 		"aliases": ["tr"],
 		"emoji": "🌳",
-		"use": "biliteral /tr/"
+		"use": { "phonetic": "biliteral /tr/" }
 	},
 	"ocean": {
 		"aliases": ["v"],
 		"emoji": "🌊",
-		"use": "uniliteral /v/, of"
+		"use": { "phonetic": "uniliteral /v/" }
 	},
 	"whale": {
 		"aliases": ["w"],
 		"emoji": "🐳",
-		"use": "uniliteral /w/"
+		"use": { "phonetic": "uniliteral /w/<br>mater lectionis for /u:/, /oʊ/, /aʊ/ in some cases (especially word-final)" }
 	},
 	"sweet_potato": {
 		"aliases": ["yam","y"],
 		"emoji": "🍠",
-		"use": "uniliteral /j/"
+		"use": { "phonetic": "uniliteral /j/<br>mater lectionis for /i:/, /eɪ/, /aɪ/ in some cases (especially word-final)" }
 	},
 	"cloud": {
 		"aliases": ["z"],
 		"emoji": "☁",
-		"use": "uniliteral /z/ ('haze')"
+		"use": { "phonetic": "uniliteral /z/ <br>(from 'haze')" }
 	},
 	
 	// these glyphs are used logographically only
 	
 	"point_up": {
 		"emoji": "☝",
-		"use": "context-specific pronoun, commonly 3p. 'he/she/they/etc.'"
+		"use": { "coreword": "context-specific pronoun,<br>commonly 3p. 'he/she/they/etc.'" }
 	},
 	"point_up_2": {
 		"emoji": "👆",
-		"use": "\""
+		"use": { "coreword": "\"" }
 	},
 	"point_down": {
 		"emoji": "👇",
-		"use": "context-specific pronoun, commonly 3p. 'he/she/they/etc.'"
+		"use": { "coreword": "context-specific pronoun,<br>commonly 3p. 'he/she/they/etc.'" }
 	},
 	"point_left": {
 		"emoji": "👈",
-		"use": "context-specific pronoun, commonly 1p. 'I/we' or proximal 'this/here'"
+		"use": { "coreword": "context-specific pronoun,<br>commonly 1p. 'I/we' or proximal 'this/here'" }
 	},
 	"point_right": {
 		"emoji": "👉",
-		"use": "context-specific pronoun, commonly 2p. 'you' or distal 'those/there'"
-	},
-	"inbox_tray": {
-		"aliases": ["in"],
-		"emoji": "📥",
-		"use": "in, input, get, receive"
-	},
-	"outbox_tray": {
-		"aliases": ["out"],
-		"emoji": "📤",
-		"use": "out, output"
+		"use": { "coreword": "context-specific pronoun,<br>commonly 2p. 'you' or distal 'those/there'" }
 	},
 	"no_entry_sign": {
 		"aliases": ["not", "no"],
 		"emoji": "🚫",
-		"use": "negation"
+		"use": { "adjadv": "all kinds of negation:<br>'not', 'un-', 'none', etc." }
 	},
 	"no_entry": {
 		"emoji": "⛔",
-		"use": "\""
+		"use": { "adjadv": "\"" }
 	},
 	"chart_with_upwards_trend": {
 		"aliases": ["more"],
 		"emoji": "📈",
-		"use": "more, most, very, etc."
+		"use": { "adjadv": "more, very, really, etc.<br>📈📈 'most'" }
 	},
 	"chart_with_downwards_trend": {
 		"aliases": ["less"],
 		"emoji": "📉",
-		"use": "less, least, hardly, etc."
+		"use": { "adjadv": "less<br>📉📉 'least'" }
 	},
 	"thumbsup": {
 		"aliases": ["thumbs_up"],
 		"emoji": "👍",
-		"use": "good"
+		"use": { "adjadv": "good" }
 	},
 	"thumbsdown": {
 		"aliases": ["thumbs_down"],
 		"emoji": "👎",
-		"use": "bad"
-	},
-	"white_check_mark": {
-		"emoji": "✅",
+		"use": { "adjadv": "bad" }
 	},
 	"100": {
 		"emoji": "💯",
-		"use": "a positive intensifier, e.g. 'swag', 'cool'..."
+		"use": { "adjadv": "a positive intensifier:<br>'swag', 'cool', 'great', etc." }
 	},
 	"question": {
 		"emoji": "❓",
@@ -325,13 +312,11 @@ GLYPHS = {
 	},
 	"accept": {
 		"emoji": "🉑",
-		"use": "can, able, possible"
+		"use": { "verb": "can, be able to", "adjadv": "anything with '-ble':<br>🉑📖 'legible'" }
 	},
 	"adult":{
-		"emoji": "🧑"
-	},
-	"adult_skin_tone_4":{
-		"emoji": "🧑🏾"
+		"emoji": "🧑",
+		"use": {"noun": "can be used after people's names" }
 	},
 	"airplane": {
 		"emoji": "✈"
@@ -362,7 +347,7 @@ GLYPHS = {
 	"left_right_arrow": {
 	},
 	"art": {
-		"use": "color, names of colors"
+		"use": { "noun": "color, names of colors" }
 	},
 	"baby": {
 		"emoji": "👶"
@@ -370,16 +355,25 @@ GLYPHS = {
 	"baby_symbol": {
 		"emoji": "🚼",
 	},
+	"beans": {
+		"emoji": "🫘",
+	},
 	"bird": {
-		"use": "archaic uniliteral /dʒ/, twitter"
+		"use": { "phonetic": "archaic uniliteral /dʒ/", "noun": "🐦🌐 'Twitter'" }
 	},
 	"black_joker": {
 		"aliases": ["joker"],
 		"emoji": "🃏"
 	},
+	"bone": {
+		"emoji": "🦴",
+	},
 	"book": {
 		"emoji": "📖",
-		"use": "read"
+		"use": { "verb": "read" }
+	},
+	"bread": {
+		"emoji": "🍞",
 	},
 	"briefcase": {
 		"emoji": "💼"
@@ -390,7 +384,7 @@ GLYPHS = {
 	"bust_in_silhouette": {
 		"aliases": ["bust"],
 		"emoji": "👤",
-		"use": "people/roles with suffix '-er'"
+		"use": { "noun": "people/roles with suffix '-er'" }
 	},
 	"camera": {
 	},
@@ -400,7 +394,7 @@ GLYPHS = {
 	},
 	"checkered_flag": {
 		"emoji": "🏁",
-		"use": "end, finish, done"
+		"use": { "verb": "end, finish, complete" }
 	},
 	"chess_pawn": {
 		"emoji": "♟",
@@ -426,16 +420,22 @@ GLYPHS = {
 		"emoji": "🐘"
 	},
 	"england": {
+		"emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
 	},
 	"envelope": {
 		"emoji": "✉"
 	},
 	"eyes": {
 		"emoji": "👀",
-		"use": "see, look"
+		"use": { "verb": "see, look" }
 	},
 	"family": {
-		"use": "group"
+		"use": { 
+				"noun": 	"group<br>🌐👪 'internet group, server'",
+				"adjadv":	"together"
+		}
+	},
+	"fountain": {
 	},
 	"game_die": {
 		"emoji": "🎲"
@@ -445,7 +445,7 @@ GLYPHS = {
 	},
 	"globe_with_meridians": {
 		"aliases": ["internet"],
-		"use": "internet, web"
+		"use": { "noun": "internet, web" }
 	},
 	"hammer": {
 	},
@@ -454,6 +454,14 @@ GLYPHS = {
 		"use": "agreement, collaboration"
 	},
 	"hug": {
+	},
+	"inbox_tray": {
+		"aliases": ["in"],
+		"emoji": "📥",
+		"use": 	{ 
+					"coreword": "in, into, inside",
+					"verb":		"get, receive"
+				}
 	},
 	"infinity": {
 		"emoji": "♾",
@@ -470,7 +478,8 @@ GLYPHS = {
 		"use": "investigation, inquiry"
 	},
 	"man": {
-		"emoji": "👨"
+		"emoji": "👨",
+		"use": {"noun": "can be used after people's names" }
 	},
 	"map": {
 	},
@@ -502,7 +511,7 @@ GLYPHS = {
 	},
 	"office": {
 		"emoji": "🏢",
-		"use": "companies, organizations"
+		"use": { "noun": "companies, organizations" }
 	},
 	"office_worker": {
 		"emoji": "🧑‍💼"
@@ -510,8 +519,13 @@ GLYPHS = {
 	"old_man": {
 		"emoji": "👴"
 	},
+	"outbox_tray": {
+		"aliases": ["out"],
+		"emoji": "📤",
+		"use": { "coreword": "out" }
+	},
 	"peanuts": {
-		"use": "nuts of all varieties"
+		"use": { "noun": "nuts of all varieties" }
 	},
 	"pen_fountain": {
 		"emoji": "🖋",
@@ -530,11 +544,11 @@ GLYPHS = {
 		"emoji": "🚶",
 	},
 	"pinching_hand": {
-		"use": "small, 'micro-'"
+		"use": { "adjadv":"small, 'micro-'" }
 	},
 	"pray": {
 		"emoji": "🙏",
-		"use": "hope, wish"
+		"use": { "verb": "hope, wish" }
 	},
 	"printer": {
 	},
@@ -548,7 +562,7 @@ GLYPHS = {
 		"emoji": "🚮"
 	},
 	"raised_hands": {
-		"use": "excitement"
+		"use": {"adjadv": "excited" }
 	},
 	"recycle": {
 		"use": "re-"
@@ -557,22 +571,22 @@ GLYPHS = {
 		"emoji": "🤜"
 	},
 	"robot": {
-		"use": "machines with suffix '-er', e.g. 'printer', 'dishwasher', 'assembler'"
+		"use": { "noun": "machines with suffix '-er':<br>'printer', 'dishwasher', 'assembler', etc." }
 	},
 	"rocket": {
 	},
 	"round_pushpin": {
 		"emoji": "📍",
-		"use": "location, place, at"
+		"use": { "coreword": "at" }
 	},
 	"scales": {
 		"emoji": "⚖"
 	},
 	"scroll": {
-		"use": "body of text, paragraph, etc."
+		"use": {"noun": "body of text, paragraph, etc."}
 	},
 	"seedling": {
-		"use": "begin, start, initial"
+		"use": {"verb": "begin, start", "adjadv": "initial"}
 	},
 	"shopping_cart": {
 	},
@@ -586,7 +600,7 @@ GLYPHS = {
 	},
 	"speaking_head": {
 		"emoji": "🗣",
-		"use": "speech, spoken language"
+		"use": { "verb": "speak, talk, say" }
 	},
 	"speech_balloon": {
 		"emoji": "💬",
@@ -597,7 +611,8 @@ GLYPHS = {
 		"emoji": "💦",
 	},
 	"test_tube": {
-		"use": "try, test, research, experiment"
+		"emoji": "🧪",
+		"use": { "verb": "try, test, research, experiment" }
 	},
 	"thought_balloon": {
 		"emoji": "💭",
@@ -607,7 +622,8 @@ GLYPHS = {
 		"emoji": "🚽",
 	},
 	"tongue": {
-		"use": "language, licking"
+		"emoji": "👅",
+		"use": {"noun": "language<br>🗣👅 'spoken language'<br>💻👅 'programming language'" }
 	},
 	"tools": {
 	},
@@ -618,20 +634,26 @@ GLYPHS = {
 	},
 	"wave": {
 		"emoji": "👋",
-		"use": "greetings, 'hello'"
+		"use": {"coreword": "used in greetings:<br>'hello', 'hi/hey'"}
+	},
+	"white_check_mark": {
+		"emoji": "✅",
+		"use": {"adjadv": "correct, standard, true"}
 	},
 	"white_heart": {
-		"use": "soul, mind, inner workings"
+		"use": {"noun": "soul, mind, inner workings" }
 	},
 	"wood": {
 		"emoji": "🪵"
 	},
 	"woman": {
-		"use": "can be used after people's names"
+		"use": {"noun": "can be used after people's names" }
 	},
 	"wrench": {
 	},
 	"writing_hand": {
+		"emoji": "✍",
+		"use": { "verb": "write" }
 	},
 	
 	"astonished": {

@@ -1,16 +1,24 @@
 TEXT_COLUMNS = 32;
 SPACES_DRAWN = true;
-TRANSPARENT = true;
+BACKGROUND_COLOR = "";
 CHAR_DIM = 48;
 CHAR_PADDING = 4;
+
+COLORS = {
+	"transparent":	[255,255,255,0],
+	"white":		[255,255,255],
+	"blurple":		[54,57,63]
+}
 
 function setup(){	
 	document.getElementById("btn").onclick = function(){
 		SPACES_DRAWN = document.getElementById("spacecb").checked;
-		TRANSPARENT = document.getElementById("transcb").checked;
+		
+		var colornames = ["transparent", "blurple", "white"];
+		BACKGROUND_COLOR = colornames[document.getElementById("bgcolor").selectedIndex];
 		
 		var colnum = document.getElementById("colnum").value;
-		colnum = Math.max( colnum, 2 ); colnum = Math.min( colnum, 128 );
+		colnum = Math.max( colnum, 1 ); colnum = Math.min( colnum, 128 );
 		document.getElementById("colnum").value = colnum;
 		TEXT_COLUMNS = colnum;
 		
@@ -21,7 +29,8 @@ function setup(){
 		
 		textAlign(LEFT, TOP)
 		textSize(CHAR_DIM);
-		fill(255)
+		var textcolor = BACKGROUND_COLOR == "white" ? 0 : 255;
+		fill(textcolor)
 		
 		var text = document.getElementById("textarea").value;
 		transcribeText(text);
@@ -29,13 +38,11 @@ function setup(){
 }
 
 function preload(){
-	var dict = document.getElementById("dictionary")
-	
 	for (key in GLYPHS) {
 		var names = "[" + key + "], "
 		glyph = GLYPHS[key];
-		// loads image associated with glyph's name
-		glyph.img = loadImage("emoji/" + key + ".png");
+		// the primary name, used to get the image for this glyph
+		glyph.imgname = key;
 		
 		if (key == "NO_EMOJI"){ continue; }
 		
@@ -55,19 +62,6 @@ function preload(){
 		}
 		// gets rid of the extra comma and space at the end
 		names = names.slice(0, -2)
-		
-		// generates a dictionary entry for every emoji
-		var newrow = dict.insertRow();
-		var namecell = newrow.insertCell();
-		namecell.innerHTML = names;
-		
-		var imgcell = newrow.insertCell();
-		imgcell.innerHTML = "<img src='emoji/" + key + ".png'>"
-		
-		var usecell = newrow.insertCell();
-		if (glyph.use){
-			usecell.innerHTML = glyph.use
-		}
 	}
 }
 
@@ -143,6 +137,7 @@ function transcribeText(text){
 			lastspacerow = Math.floor(lastspaceind / TEXT_COLUMNS );
 			currspacerow = Math.floor(currspaceind / TEXT_COLUMNS );
 			lastspacecol = lastspaceind % TEXT_COLUMNS;
+			currspacecol = currspaceind % TEXT_COLUMNS;
 			
 			if (lastspacerow != currspacerow){
 				
@@ -154,7 +149,7 @@ function transcribeText(text){
 				
 				// otherwise, to make words appear on the next line, we give them
 				// the complement number of the columns count.
-				if (currword.length <= TEXT_COLUMNS && lastspacecol != 0 ){					
+				if (currword.length <= TEXT_COLUMNS && lastspacecol != 0 && currspacecol != 0 ){					
 					var blanks_to_insert = TEXT_COLUMNS - (lastspaceind % TEXT_COLUMNS) - 1;
 					console.log("bti: " + blanks_to_insert);
 					for (var q = 0; q < blanks_to_insert; q++){
@@ -197,6 +192,43 @@ function transcribeText(text){
 		textlist.pop();
 	}
 	
+	// we count how many glyph images need to be loaded that aren't already
+	imagesfinished = 0;
+	imagesqueued   = 0;
+	for (var i = 0; i < textlist.length; i++){
+		var glyphname = textlist[i];
+		// if no emoji exists then ofc no image to load either
+		if (!GLYPHS[glyphname]){ continue; }
+		if (!GLYPHS[glyphname].img){
+			imagesqueued++;
+		}
+	}
+	print("images queued: " + imagesqueued);
+	// now we iterate again and this time we load the images
+	// If this was in the above for loop, there would be a chance that images would load before
+	// the count of total queued images has finished counting, which could cause it to exit prematurely
+	for (var i = 0; i < textlist.length; i++){
+		var currentglyph = GLYPHS[textlist[i]];
+		if (!currentglyph){ continue; }
+		if (!currentglyph.img){
+			
+			// upon the image finishing loading, we see how many more are left to go
+			// if no more images are left to load, then draw the final image
+			currentglyph.img = loadImage("emoji/" + currentglyph.imgname + ".png", img => {
+				imagesfinished++;
+				if (imagesfinished / imagesqueued == 1){
+					drawGlyphsAndPutText(textlist);
+				}
+			});
+		}
+	}
+	// were there never any images to load to begin with? no need to wait then
+	if (imagesqueued == 0){
+		drawGlyphsAndPutText(textlist);
+	}
+}
+
+function drawGlyphsAndPutText(textlist){
 	var rows = 1 + Math.floor( (textlist.length - 1) / TEXT_COLUMNS );
 	
 	var canvaswidth = CHAR_PADDING + (TEXT_COLUMNS * (CHAR_DIM + CHAR_PADDING))
@@ -204,7 +236,7 @@ function transcribeText(text){
 	resizeCanvas( canvaswidth, canvasheight );
 	clear();
 	
-	if (!TRANSPARENT){ background(54,57,63); }
+	background(COLORS[BACKGROUND_COLOR]);
 	
 	var copydiv = document.getElementById("copydiv")
 	copydiv.innerHTML = "";

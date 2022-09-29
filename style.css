@@ -5,7 +5,7 @@ body {
 	font-family: sans-serif;
 }
 
-div, input, button, textarea {
+div, input, button, textarea, select {
 	border: 4px dotted black;
 	background-color: #223344;
 	font-size: 20px;
@@ -92,5 +92,8 @@ table {
 .headerimg {
 	width: 100%;
 	height: auto;
+}
+a:link, a:visited {
+	color: LightBlue;
 }
 
