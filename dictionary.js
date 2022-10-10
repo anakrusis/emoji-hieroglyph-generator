@@ -4,8 +4,11 @@ var SECTIONS = {
 	"verb": 		document.getElementById("dict_verb"),
 	"adjadv": 		document.getElementById("dict_adjadv"),
 	"noun": 		document.getElementById("dict_noun"),
+	"exp": 			document.getElementById("dict_exp"),
 	"misc": 		document.getElementById("dict_misc")
 }
+
+var SIGNS_COUNT = 0;
 
 for (key in GLYPHS) {
 	var glyph = GLYPHS[key];
@@ -29,6 +32,8 @@ for (key in GLYPHS) {
 		// gets rid of the extra comma and space at the end
 		namestring = namestring.slice(0, -2)
 	}
+	
+	SIGNS_COUNT++;
 
 	// old unsorted definitions are automatically be placed in the misc category
 	if (!(typeof glyph.use === "object")){
@@ -40,6 +45,7 @@ for (key in GLYPHS) {
 		addDictEntry(sect, namestring, key, glyph.use[sect]);
 	}
 }
+document.getElementById("counterdiv").innerHTML = "Number of unique signs: " + SIGNS_COUNT;
 
 function addDictEntry(section, namestring, imgname, definition){
 	var dict = SECTIONS[section];

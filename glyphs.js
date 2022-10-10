@@ -274,10 +274,6 @@ GLYPHS = {
 	"grey_exclamation": {
 		"emoji": "❕",
 	},
-	"clock": {
-		"emoji": "🕰",
-		"use": "words relating to time, 'now', 'then'..."
-	},
 	"timer": {
 		"emoji": "⏲",
 		"use": "\""
@@ -324,8 +320,22 @@ GLYPHS = {
 	"airplane_departure": {
 		"emoji": "🛫"
 	},
+	"alarm_clock": {
+		"emoji": "⏰",
+		"use": {
+			"coreword": "see: clock",
+			"adjadv": 	"see: clock",
+			"noun": 	"see: clock",
+		}
+	},
+	"anger": {
+		"emoji": "💢",
+	},
 	"arrow_up":{
 		"emoji": "⬆"
+	},
+	"arrow_up_down":{
+		"emoji": "↕"
 	},
 	"arrow_down":{
 		"emoji": "⬇"
@@ -345,9 +355,15 @@ GLYPHS = {
 	"arrow_upper_right":{
 	},
 	"left_right_arrow": {
+		"emoji": "↔"
 	},
 	"art": {
 		"use": { "noun": "color, names of colors" }
+	},
+	"astonished": {
+		"aliases": ["surprised", "wow"],
+		"emoji": "😲",
+		"use": { "exp": "" }
 	},
 	"baby": {
 		"emoji": "👶"
@@ -375,11 +391,17 @@ GLYPHS = {
 	"bread": {
 		"emoji": "🍞",
 	},
+	"brick": {
+		"emoji": "🧱",
+	},
 	"briefcase": {
 		"emoji": "💼"
 	},
 	"bulb": {
 		"emoji": "💡"
+	},
+	"burrito": {
+		"emoji": "🌯"
 	},
 	"bust_in_silhouette": {
 		"aliases": ["bust"],
@@ -399,17 +421,45 @@ GLYPHS = {
 	"chess_pawn": {
 		"emoji": "♟",
 	},
+	"clapper": {
+		"emoji": "🎬"
+	},
+	"clock": {
+		"emoji": "🕰",
+		"use": {
+			"coreword": "'when', 'during', 'before', other time related words",
+			"adjadv":	"'now', 'then', other time related words",
+			"noun":		"'time'"
+		}
+	},
 	"cloud_lightning": {
 	},
-	"crescent_moon": {
+	"coat": {
+		"emoji": "🧥"
+	},
+	"cold_face": {
+		"emoji": "🥶",
+		"use": { "exp": "" }
+	},
+	"compass": {
+		"emoji": "🧭"
 	},
 	"computer": {
 	},
 	"construction_site": {
 	},
+	"cowboy": {
+		"emoji": "🤠",
+		"use": { "exp": "" }
+	},
+	"crescent_moon": {
+	},
 	"dash": {
 		"emoji": "💨",
 		"use": "speed, fast"
+	},
+	"dizzy": {
+		"emoji": "💫",
 	},
 	"earth_africa": {
 		"emoji": "🌍"
@@ -429,11 +479,18 @@ GLYPHS = {
 		"emoji": "👀",
 		"use": { "verb": "see, look" }
 	},
+	"face_with_monocle": {
+		"emoji": "🧐",
+		"use": { "exp": "" }
+	},
 	"family": {
 		"use": { 
 				"noun": 	"group<br>🌐👪 'internet group, server'",
 				"adjadv":	"together"
 		}
+	},
+	"fingers_crossed": {
+		"emoji": "🤞"
 	},
 	"fountain": {
 	},
@@ -453,6 +510,13 @@ GLYPHS = {
 		"emoji": "🤝",
 		"use": "agreement, collaboration"
 	},
+	"hot_face": {
+		"emoji": "🥵",
+		"use": { "exp": "" }
+	},
+	"hotsprings": {
+		"emoji": "♨",
+	},
 	"hug": {
 	},
 	"inbox_tray": {
@@ -466,13 +530,26 @@ GLYPHS = {
 	"infinity": {
 		"emoji": "♾",
 	},
+	"joy": {
+	},
 	"judge": {
 		"emoji": "🧑‍⚖️",
+	},
+	"kissing_closed_eyes": {
+		"emoji": "😚",
+		"use": { "exp": "" }
+	},
+	"label": {
+		"emoji": "🏷",
 	},
 	"left_facing_fist": {
 		"emoji": "🤛"
 	},
 	"loud_sound": {
+	},
+	"lungs": {
+		"emoji": "🫁",
+		"use": { "exp": "" }
 	},
 	"mag": {
 		"use": "investigation, inquiry"
@@ -503,6 +580,9 @@ GLYPHS = {
 	"necktie": {
 		"emoji": "👔",
 	},
+	"newspaper2": {
+		"emoji": "🗞",
+	},
 	"notes": {
 	},
 	"octagonal_sign": {
@@ -523,6 +603,10 @@ GLYPHS = {
 		"aliases": ["out"],
 		"emoji": "📤",
 		"use": { "coreword": "out" }
+	},
+	"partying_face": {
+		"emoji": "🥳",
+		"use": { "exp": "" }
 	},
 	"peanuts": {
 		"use": { "noun": "nuts of all varieties" }
@@ -548,7 +632,7 @@ GLYPHS = {
 	},
 	"pray": {
 		"emoji": "🙏",
-		"use": { "verb": "hope, wish" }
+		"use": { "verb": "hope, wish, bless" }
 	},
 	"printer": {
 	},
@@ -561,16 +645,23 @@ GLYPHS = {
 		"aliases": ["trash", "garbage"],
 		"emoji": "🚮"
 	},
+	"rage": {
+		"emoji": "😡",
+		"use": { "exp": "" }
+	},
 	"raised_hands": {
+		"emoji": "🙌",
 		"use": {"adjadv": "excited" }
 	},
 	"recycle": {
+		"emoji": "♻",
 		"use": "re-"
 	},
 	"right_facing_fist": {
 		"emoji": "🤜"
 	},
 	"robot": {
+		"emoji": "🤖",
 		"use": { "noun": "machines with suffix '-er':<br>'printer', 'dishwasher', 'assembler', etc." }
 	},
 	"rocket": {
@@ -583,9 +674,11 @@ GLYPHS = {
 		"emoji": "⚖"
 	},
 	"scroll": {
+		"emoji": "📜",
 		"use": {"noun": "body of text, paragraph, etc."}
 	},
 	"seedling": {
+		"emoji": "🌱",
 		"use": {"verb": "begin, start", "adjadv": "initial"}
 	},
 	"shopping_cart": {
@@ -593,7 +686,24 @@ GLYPHS = {
 	"skull": {
 		"emoji": "💀",
 	},
+	"skull_crossbones": {
+		"emoji": "☠"
+	},
+	"smirk": {
+		"emoji": "😏",
+		"use": { "exp": "" }
+	},
+	"smirk_cat": {
+		"emoji": "😼",
+		"use": { "exp": "very mischevious" }
+	},
 	"snail": {
+		"emoji": "🐌",
+	},
+	"sneezing_face": {
+		"aliases": ["sneeze"],
+		"emoji": "🤧",
+		"use": { "exp": "" }
 	},
 	"sound": {
 		"emoji": "🔉",
@@ -605,10 +715,21 @@ GLYPHS = {
 	"speech_balloon": {
 		"emoji": "💬",
 	},
+	"star2": {
+		"emoji": "🌟",
+	},
+	"sunglasses": {
+		"emoji": "😎",
+		"use": { "exp": "" }
+	},
 	"swan": {
+		"emoji": "🦢",
 	},
 	"sweat_drops": {
 		"emoji": "💦",
+	},
+	"taco": {
+		"emoji": "🌮"
 	},
 	"test_tube": {
 		"emoji": "🧪",
@@ -626,8 +747,13 @@ GLYPHS = {
 		"use": {"noun": "language<br>🗣👅 'spoken language'<br>💻👅 'programming language'" }
 	},
 	"tools": {
+		"emoji": "🛠",
 	},
 	"tooth": {
+	},
+	"triumph": {
+		"emoji": "😤",
+		"use": { "exp": "" }
 	},
 	"trophy": {
 		"emoji": "🏆"
@@ -636,42 +762,56 @@ GLYPHS = {
 		"emoji": "👋",
 		"use": {"coreword": "used in greetings:<br>'hello', 'hi/hey'"}
 	},
+	"weary": {
+		"emoji": "😩",
+		"use": { "exp": "" }
+	},
+	"wind_blowing_face": {
+		"aliases": ["wind"],
+		"emoji": "🌬"
+	},
 	"white_check_mark": {
 		"emoji": "✅",
 		"use": {"adjadv": "correct, standard, true"}
 	},
 	"white_heart": {
+		"emoji": "🤍",
 		"use": {"noun": "soul, mind, inner workings" }
-	},
-	"wood": {
-		"emoji": "🪵"
 	},
 	"woman": {
 		"use": {"noun": "can be used after people's names" }
 	},
+	"wood": {
+		"emoji": "🪵"
+	},
+	"woozy_face": {
+		"aliases": ["woozy"],
+		"emoji": "🥴",
+		"use": { "exp": "" }
+	},
 	"wrench": {
+		"emoji": "🔧",
 	},
 	"writing_hand": {
 		"emoji": "✍",
 		"use": { "verb": "write" }
 	},
-	
-	"astonished": {
-		"aliases": ["surprised, wow"],
-		"emoji": "😲"
-	},
+
 	"confounded": {
+		"emoji": "😖",
+		"use": { "exp": "" }
 	},
 	"cry": {
-		"emoji": "😢"
-	},
-	"partying_face": {
-		"emoji": "🥳"
+		"emoji": "😢",
+		"use": { "exp": "" }
 	},
 	"relaxed": {
-		"use": "calm"
+		"emoji": "☺",
+		"use": { "exp": "calm" }
 	},
 	"thinking": {
+		"emoji": "🤔",
+		"use": { "exp": "" }
 	},
 	
 	"NO_EMOJI": {}
