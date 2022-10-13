@@ -44,7 +44,19 @@ function preload(){
 		// the primary name, used to get the image for this glyph
 		glyph.imgname = key;
 		
-		if (key == "NO_EMOJI"){ continue; }
+		// this ones special, it wont ever be loaded if we dont do it now
+		if (key == "NO_EMOJI"){ 
+			glyph.img = loadImage("emoji/NO_EMOJI.png");
+			continue; 
+		}
+		
+		if (!glyph.aliases){
+			glyph.aliases = [];
+		}
+		// the emoji string itself also points to the dictionary item
+		if (glyph.emoji){
+			glyph.aliases.push( glyph.emoji );
+		}
 		
 		// maps all aliases to the same pointer as the glyph itself
 		if (glyph.aliases){
@@ -76,9 +88,14 @@ function transcribeText(text){
 	var currentgrouping = "";
 	
 	// first we will just seperate the characters in brackets into a 1-dimensional list
-	for (var i = 0; i < text.length; i++){
-		var cchar = text.charAt(i);
-		var ccode = text.charCodeAt(i);
+	var textlength = Array.from(text).length;
+	for (var i = 0; i < textlength; i++){
+		var cchar = Array.from(text)[i];
+		
+		// variation selector is always ignored. of course we want emoji presentation!
+		if (cchar.charCodeAt(0) == 65039){
+			continue;
+		}
 		if (cchar == "["){
 			inbracket = true; continue;
 		}
@@ -86,6 +103,12 @@ function transcribeText(text){
 			inbracket = false; 
 			textlist.push( currentgrouping ); 
 			currentgrouping = ""; continue;
+		}
+		
+		// fullwidth spaces and interpuncts are internally converted to ascii spaces
+		// (which can be converted back lol)
+		if (cchar == "　" || cchar == "▪"){
+			cchar = " ";
 		}
 		
 		if (inbracket){
@@ -195,11 +218,17 @@ function transcribeText(text){
 	// we count how many glyph images need to be loaded that aren't already
 	imagesfinished = 0;
 	imagesqueued   = 0;
+	// the names of the images that are queued to load stored temporarily here.
+	// this way the same image isn't expected to load twice
+	var imagenamestoload = [];
 	for (var i = 0; i < textlist.length; i++){
 		var glyphname = textlist[i];
 		// if no emoji exists then ofc no image to load either
 		if (!GLYPHS[glyphname]){ continue; }
-		if (!GLYPHS[glyphname].img){
+		var cg = GLYPHS[glyphname];
+		
+		if (!cg.img && imagenamestoload.indexOf(cg.imgname) == -1){
+			imagenamestoload.push(cg.imgname);
 			imagesqueued++;
 		}
 	}
@@ -217,7 +246,9 @@ function transcribeText(text){
 			currentglyph.img = loadImage("emoji/" + currentglyph.imgname + ".png", img => {
 				imagesfinished++;
 				if (imagesfinished / imagesqueued == 1){
+					console.log("images queued at the time of render: " + imagesqueued);
 					drawGlyphsAndPutText(textlist);
+					return;
 				}
 			});
 		}
@@ -229,6 +260,7 @@ function transcribeText(text){
 }
 
 function drawGlyphsAndPutText(textlist){
+	
 	var rows = 1 + Math.floor( (textlist.length - 1) / TEXT_COLUMNS );
 	
 	var canvaswidth = CHAR_PADDING + (TEXT_COLUMNS * (CHAR_DIM + CHAR_PADDING))
@@ -244,7 +276,7 @@ function drawGlyphsAndPutText(textlist){
 	for (var i = 0; i < textlist.length; i++){
 		var x = ( i % TEXT_COLUMNS );
 		var y = Math.floor( i / TEXT_COLUMNS );
-		var currentglyph = textlist[i];
+		var currentglyph = textlist[i]; console.log(currentglyph)
 		drawGlyph(currentglyph, x, y);
 		
 		if (x == 0 && y > 0){
@@ -270,6 +302,7 @@ function drawGlyphsAndPutText(textlist){
 }
 
 function drawGlyph(glyphname, column, row){
+	console.log("drawing " + glyphname);
 	if (glyphname == " " || glyphname == "\n"){ return }
 	var x = CHAR_PADDING + ( column * ( CHAR_DIM + CHAR_PADDING ) );
 	var y = CHAR_PADDING + ( row * (CHAR_DIM + CHAR_PADDING ))	
@@ -280,5 +313,6 @@ function drawGlyph(glyphname, column, row){
 	}
 	
 	var img = GLYPHS[glyphname] ? GLYPHS[glyphname].img : GLYPHS["NO_EMOJI"].img;
+	if (!img){ img = GLYPHS["NO_EMOJI"].img; }
 	image(img,x,y,CHAR_DIM,CHAR_DIM);
 }

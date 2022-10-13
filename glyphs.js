@@ -238,16 +238,6 @@ GLYPHS = {
 		"emoji": "⛔",
 		"use": { "adjadv": "\"" }
 	},
-	"chart_with_upwards_trend": {
-		"aliases": ["more"],
-		"emoji": "📈",
-		"use": { "adjadv": "more, very, really, etc.<br>📈📈 'most'" }
-	},
-	"chart_with_downwards_trend": {
-		"aliases": ["less"],
-		"emoji": "📉",
-		"use": { "adjadv": "less<br>📉📉 'least'" }
-	},
 	"thumbsup": {
 		"aliases": ["thumbs_up"],
 		"emoji": "👍",
@@ -273,13 +263,6 @@ GLYPHS = {
 	},
 	"grey_exclamation": {
 		"emoji": "❕",
-	},
-	"timer": {
-		"emoji": "⏲",
-		"use": "\""
-	},
-	"koko": {
-		"emoji": "🈁"
 	},
 	
 	"1": {
@@ -323,13 +306,16 @@ GLYPHS = {
 	"alarm_clock": {
 		"emoji": "⏰",
 		"use": {
-			"coreword": "see: clock",
-			"adjadv": 	"see: clock",
-			"noun": 	"see: clock",
+			"coreword": "'when', 'during', 'before', other time related words",
+			"adjadv":	"'now', 'then', other time related words",
+			"noun":		"'time'"
 		}
 	},
 	"anger": {
 		"emoji": "💢",
+		"use": {
+			"exp": ""
+		}
 	},
 	"arrow_up":{
 		"emoji": "⬆"
@@ -381,6 +367,12 @@ GLYPHS = {
 		"aliases": ["joker"],
 		"emoji": "🃏"
 	},
+	"black_small_square": {
+		"emoji": "▪",
+	},
+	"black_square_button": {
+		"emoji": "🔲",
+	},
 	"bone": {
 		"emoji": "🦴",
 	},
@@ -408,11 +400,24 @@ GLYPHS = {
 		"emoji": "👤",
 		"use": { "noun": "people/roles with suffix '-er'" }
 	},
+	"calendar_spiral": {
+		"emoji": "🗓",
+	},
 	"camera": {
 	},
 	"camera_with_flash": {
 	},
 	"chair": {
+	},
+	"chart_with_downwards_trend": {
+		"aliases": ["less"],
+		"emoji": "📉",
+		"use": { "adjadv": "less<br>📉📉 'least'" }
+	},
+	"chart_with_upwards_trend": {
+		"aliases": ["more"],
+		"emoji": "📈",
+		"use": { "adjadv": "more, very, really, etc.<br>📈📈 'most'" }
 	},
 	"checkered_flag": {
 		"emoji": "🏁",
@@ -422,7 +427,8 @@ GLYPHS = {
 		"emoji": "♟",
 	},
 	"clapper": {
-		"emoji": "🎬"
+		"emoji": "🎬",
+		"use": { "verb": "direct, make (someone do sth.)" }
 	},
 	"clock": {
 		"emoji": "🕰",
@@ -446,6 +452,10 @@ GLYPHS = {
 	},
 	"computer": {
 	},
+	"confounded": {
+		"emoji": "😖",
+		"use": { "exp": "" }
+	},
 	"construction_site": {
 	},
 	"cowboy": {
@@ -453,6 +463,13 @@ GLYPHS = {
 		"use": { "exp": "" }
 	},
 	"crescent_moon": {
+	},
+	"crossed_swords": {
+		"emoji": "⚔",
+	},
+	"cry": {
+		"emoji": "😢",
+		"use": { "exp": "" }
 	},
 	"dash": {
 		"emoji": "💨",
@@ -492,6 +509,18 @@ GLYPHS = {
 	"fingers_crossed": {
 		"emoji": "🤞"
 	},
+	"fist": {
+		"emoji": "✊",
+	},
+	"flag_white": {
+		"emoji": "🏳",
+		"use": { 
+			"verb": 	"give up, surrender"
+		}
+	},
+	"floppy_disk": {
+		"emoji": "💾"
+	},
 	"fountain": {
 	},
 	"game_die": {
@@ -508,7 +537,7 @@ GLYPHS = {
 	},
 	"handshake": {
 		"emoji": "🤝",
-		"use": "agreement, collaboration"
+		"use": { "verb": "agree" }
 	},
 	"hot_face": {
 		"emoji": "🥵",
@@ -518,6 +547,7 @@ GLYPHS = {
 		"emoji": "♨",
 	},
 	"hug": {
+		"emoji": "🫂",
 	},
 	"inbox_tray": {
 		"aliases": ["in"],
@@ -531,6 +561,8 @@ GLYPHS = {
 		"emoji": "♾",
 	},
 	"joy": {
+		"emoji": "😂",
+		"use": { "exp": "" }
 	},
 	"judge": {
 		"emoji": "🧑‍⚖️",
@@ -538,6 +570,9 @@ GLYPHS = {
 	"kissing_closed_eyes": {
 		"emoji": "😚",
 		"use": { "exp": "" }
+	},
+	"koko": {
+		"emoji": "🈁"
 	},
 	"label": {
 		"emoji": "🏷",
@@ -573,7 +608,7 @@ GLYPHS = {
 	},
 	"muscle": {
 		"emoji": "💪",
-		"use": "strong, hard"
+		"use": {"adjadv": "strong" }
 	},
 	"musical_note": {
 	},
@@ -609,6 +644,7 @@ GLYPHS = {
 		"use": { "exp": "" }
 	},
 	"peanuts": {
+		"emoji": "🥜",
 		"use": { "noun": "nuts of all varieties" }
 	},
 	"pen_fountain": {
@@ -617,6 +653,9 @@ GLYPHS = {
 	"pencil": {
 		"aliases": ["memo"],
 		"emoji": "📝",
+	},
+	"person_bowing": {
+		"emoji": "🙇",
 	},
 	"person_lifting_weights": {
 	},
@@ -657,6 +696,10 @@ GLYPHS = {
 		"emoji": "♻",
 		"use": "re-"
 	},
+	"relaxed": {
+		"emoji": "☺",
+		"use": { "exp": "calm" }
+	},
 	"right_facing_fist": {
 		"emoji": "🤜"
 	},
@@ -669,6 +712,10 @@ GLYPHS = {
 	"round_pushpin": {
 		"emoji": "📍",
 		"use": { "coreword": "at" }
+	},
+	"saluting_face": {
+		"emoji": "🫡",
+		"use": { "exp": "" }
 	},
 	"scales": {
 		"emoji": "⚖"
@@ -689,6 +736,10 @@ GLYPHS = {
 	"skull_crossbones": {
 		"emoji": "☠"
 	},
+	"smiling_face_with_tear": {
+		"emoji": "🥲",
+		"use": { "exp": "" }
+	},
 	"smirk": {
 		"emoji": "😏",
 		"use": { "exp": "" }
@@ -703,6 +754,10 @@ GLYPHS = {
 	"sneezing_face": {
 		"aliases": ["sneeze"],
 		"emoji": "🤧",
+		"use": { "exp": "" }
+	},
+	"sob": {
+		"emoji": "😭",
 		"use": { "exp": "" }
 	},
 	"sound": {
@@ -735,9 +790,18 @@ GLYPHS = {
 		"emoji": "🧪",
 		"use": { "verb": "try, test, research, experiment" }
 	},
+	"thinking": {
+		"emoji": "🤔",
+		"use": { "exp": "" }
+	},
 	"thought_balloon": {
 		"emoji": "💭",
-		"use": "thought, idea, concept"
+		"use": { 	"noun": "thought, idea",
+					"verb":	"think, consider"
+		}
+	},
+	"timer": {
+		"emoji": "⏲",
 	},
 	"toilet": {
 		"emoji": "🚽",
@@ -756,7 +820,10 @@ GLYPHS = {
 		"use": { "exp": "" }
 	},
 	"trophy": {
-		"emoji": "🏆"
+		"emoji": "🏆",
+		"use": {
+			"verb": "win, succeed"
+		}
 	},
 	"wave": {
 		"emoji": "👋",
@@ -768,7 +835,8 @@ GLYPHS = {
 	},
 	"wind_blowing_face": {
 		"aliases": ["wind"],
-		"emoji": "🌬"
+		"emoji": "🌬",
+		"use": {"noun": ""}
 	},
 	"white_check_mark": {
 		"emoji": "✅",
@@ -777,6 +845,9 @@ GLYPHS = {
 	"white_heart": {
 		"emoji": "🤍",
 		"use": {"noun": "soul, mind, inner workings" }
+	},
+	"white_square_button": {
+		"emoji": "🔳",
 	},
 	"woman": {
 		"use": {"noun": "can be used after people's names" }
@@ -795,23 +866,6 @@ GLYPHS = {
 	"writing_hand": {
 		"emoji": "✍",
 		"use": { "verb": "write" }
-	},
-
-	"confounded": {
-		"emoji": "😖",
-		"use": { "exp": "" }
-	},
-	"cry": {
-		"emoji": "😢",
-		"use": { "exp": "" }
-	},
-	"relaxed": {
-		"emoji": "☺",
-		"use": { "exp": "calm" }
-	},
-	"thinking": {
-		"emoji": "🤔",
-		"use": { "exp": "" }
 	},
 	
 	"NO_EMOJI": {}
