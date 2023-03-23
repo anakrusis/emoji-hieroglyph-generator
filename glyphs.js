@@ -250,7 +250,10 @@ GLYPHS = {
 	},
 	"100": {
 		"emoji": "💯",
-		"use": { "adjadv": "a positive intensifier:<br>'swag', 'cool', 'great', etc." }
+		"use": { 
+			"adjadv": "a positive intensifier:<br>'swag', 'cool', 'great', etc.", 
+			"exp": "" 
+		}
 	},
 	"question": {
 		"emoji": "❓",
@@ -289,10 +292,16 @@ GLYPHS = {
 		"emoji": "🅰",
 		"use": "\""
 	},
+	"abacus": {
+		"emoji": "🧮"
+	},
 	"accept": {
 		"emoji": "🉑",
 		"use": { "verb": "can, be able to", "adjadv": "anything with '-ble':<br>🉑📖 'legible'" }
 	},
+	"adhesive_bandage": {
+		"emoji": "🩹",
+	},	
 	"adult":{
 		"emoji": "🧑",
 		"use": {"noun": "can be used after people's names" }
@@ -308,7 +317,7 @@ GLYPHS = {
 		"use": {
 			"coreword": "'when', 'during', 'before', other time related words",
 			"adjadv":	"'now', 'then', other time related words",
-			"noun":		"'time'"
+			"noun":		"time"
 		}
 	},
 	"anger": {
@@ -357,6 +366,9 @@ GLYPHS = {
 	"baby_symbol": {
 		"emoji": "🚼",
 	},
+	"bar_chart": {
+		"emoji": "📊",
+	},	
 	"beans": {
 		"emoji": "🫘",
 	},
@@ -400,8 +412,16 @@ GLYPHS = {
 		"emoji": "👤",
 		"use": { "noun": "people/roles with suffix '-er'" }
 	},
+	"busts_in_silhouette": {
+		"aliases": ["busts"],
+		"emoji": "👥"
+	},
+	"calendar": {
+		"emoji": "📆",
+		"use": { "noun": "names of months and years" }
+	},
 	"calendar_spiral": {
-		"emoji": "🗓",
+		"emoji": "🗓️",
 	},
 	"camera": {
 	},
@@ -430,13 +450,19 @@ GLYPHS = {
 		"emoji": "🎬",
 		"use": { "verb": "direct, make (someone do sth.)" }
 	},
+	"clipboard": {
+		"emoji": "📋"
+	},
 	"clock": {
 		"emoji": "🕰",
 		"use": {
 			"coreword": "'when', 'during', 'before', other time related words",
 			"adjadv":	"'now', 'then', other time related words",
-			"noun":		"'time'"
+			"noun":		"time"
 		}
+	},
+	"clock2": {
+		"emoji": "🕑"
 	},
 	"cloud_lightning": {
 	},
@@ -471,12 +497,25 @@ GLYPHS = {
 		"emoji": "😢",
 		"use": { "exp": "" }
 	},
+	"dark_sunglasses": {
+		"emoji": "🕶"
+	},
 	"dash": {
 		"emoji": "💨",
 		"use": "speed, fast"
 	},
+	"detective": {
+		"emoji": "🕵️"
+	},
+	"dividers": {
+		"aliases": ["card_index_dividers"],
+		"emoji": "🗂"
+	},
 	"dizzy": {
 		"emoji": "💫",
+	},
+	"dna":{
+		"emoji": "🧬",
 	},
 	"earth_africa": {
 		"emoji": "🌍"
@@ -505,6 +544,9 @@ GLYPHS = {
 				"noun": 	"group<br>🌐👪 'internet group, server'",
 				"adjadv":	"together"
 		}
+	},
+	"file_cabinet": {
+		"emoji": "🗄",
 	},
 	"fingers_crossed": {
 		"emoji": "🤞"
@@ -560,6 +602,9 @@ GLYPHS = {
 	"infinity": {
 		"emoji": "♾",
 	},
+	"jigsaw": {
+		"emoji": "🧩"
+	},
 	"joy": {
 		"emoji": "😂",
 		"use": { "exp": "" }
@@ -577,17 +622,27 @@ GLYPHS = {
 	"label": {
 		"emoji": "🏷",
 	},
+	"last_quarter_moon": {
+		"emoji": "🌗",
+		"use": { "noun": "names of months" }
+	},
+	"laughing": {
+		"emoji": "😆",
+		"use": { "exp": "" }
+	},
 	"left_facing_fist": {
 		"emoji": "🤛"
+	},
+	"leftwards_arrow_with_hook":{
+		
 	},
 	"loud_sound": {
 	},
 	"lungs": {
-		"emoji": "🫁",
-		"use": { "exp": "" }
+		"emoji": "🫁"
 	},
 	"mag": {
-		"use": "investigation, inquiry"
+		"use": {"verb": "find, decipher, discover"}
 	},
 	"man": {
 		"emoji": "👨",
@@ -639,6 +694,9 @@ GLYPHS = {
 		"emoji": "📤",
 		"use": { "coreword": "out" }
 	},
+	"package": {
+		"emoji": "📦",
+	},	
 	"partying_face": {
 		"emoji": "🥳",
 		"use": { "exp": "" }
@@ -694,7 +752,7 @@ GLYPHS = {
 	},
 	"recycle": {
 		"emoji": "♻",
-		"use": "re-"
+		"use": { "coreword": "re-, again"}
 	},
 	"relaxed": {
 		"emoji": "☺",
@@ -717,6 +775,9 @@ GLYPHS = {
 		"emoji": "🫡",
 		"use": { "exp": "" }
 	},
+	"santa": {
+		"emoji": "🎅"
+	},
 	"scales": {
 		"emoji": "⚖"
 	},
@@ -728,13 +789,20 @@ GLYPHS = {
 		"emoji": "🌱",
 		"use": {"verb": "begin, start", "adjadv": "initial"}
 	},
+	"see_no_evil": {
+		"emoji": "🙈"
+	},
 	"shopping_cart": {
 	},
 	"skull": {
 		"emoji": "💀",
+		"use": { "exp": "" }
 	},
 	"skull_crossbones": {
 		"emoji": "☠"
+	},
+	"smile":{
+		"emoji": "😄"
 	},
 	"smiling_face_with_tear": {
 		"emoji": "🥲",
@@ -772,6 +840,10 @@ GLYPHS = {
 	},
 	"star2": {
 		"emoji": "🌟",
+	},
+	"star_struck":{
+		"emoji": "🤩",
+		"use": { "exp": "excitement, amazement" }
 	},
 	"sunglasses": {
 		"emoji": "😎",
@@ -815,6 +887,9 @@ GLYPHS = {
 	},
 	"tooth": {
 	},
+	"triangular_ruler":{
+		
+	},
 	"triumph": {
 		"emoji": "😤",
 		"use": { "exp": "" }
@@ -837,6 +912,9 @@ GLYPHS = {
 		"aliases": ["wind"],
 		"emoji": "🌬",
 		"use": {"noun": ""}
+	},
+	"window": {
+		
 	},
 	"white_check_mark": {
 		"emoji": "✅",
@@ -866,6 +944,10 @@ GLYPHS = {
 	"writing_hand": {
 		"emoji": "✍",
 		"use": { "verb": "write" }
+	},
+	"yum":{
+		"emoji": "😋",
+		"use": { "exp": "feels more like a silly face to me" }
 	},
 	
 	"NO_EMOJI": {}
