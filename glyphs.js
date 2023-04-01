@@ -4,7 +4,7 @@ GLYPHS = {
 	"eye": {
 		"aliases": ["'"],
 		"emoji": "👁",
-		"use": { "phonetic": "placeholder for words with initial vowel" }
+		"use": { "phonetic": "placeholder for initial vowel" }
 	},
 	"bee": {
 		"aliases": ["b"],
@@ -348,6 +348,9 @@ GLYPHS = {
 		"emoji": "⤵"
 	},
 	"arrow_upper_right":{
+	},
+	"arrows_counterclockwise":{
+		
 	},
 	"left_right_arrow": {
 		"emoji": "↔"
