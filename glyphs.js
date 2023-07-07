@@ -126,6 +126,11 @@ GLYPHS = {
 		"emoji": "👂",
 		"use": { "phonetic": "uniliteral /r/" }
 	},
+	"urn": {
+		"aliases": ["rn"],
+		"emoji": "⚱",
+		"use": { "phonetic": "biliteral /rn/" }
+	},
 	"ice_cube": {
 		"aliases": ["s"],
 		"emoji": "🧊",
@@ -326,6 +331,8 @@ GLYPHS = {
 			"exp": ""
 		}
 	},
+	"apple": {
+	},
 	"arrow_up":{
 		"emoji": "⬆"
 	},
@@ -395,6 +402,10 @@ GLYPHS = {
 		"emoji": "📖",
 		"use": { "verb": "read" }
 	},
+	"boy": {
+		"emoji": "👦",
+		"use": { "noun": "can be used after people's names" }
+	},
 	"bread": {
 		"emoji": "🍞",
 	},
@@ -430,6 +441,10 @@ GLYPHS = {
 	},
 	"camera_with_flash": {
 	},
+	"cat": {
+	},
+	"cat2": {
+	},
 	"chair": {
 	},
 	"chart_with_downwards_trend": {
@@ -448,6 +463,9 @@ GLYPHS = {
 	},
 	"chess_pawn": {
 		"emoji": "♟",
+	},
+	"cityscape": {
+		"emoji": "🏙"
 	},
 	"clapper": {
 		"emoji": "🎬",
@@ -468,6 +486,8 @@ GLYPHS = {
 		"emoji": "🕑"
 	},
 	"cloud_lightning": {
+	},
+	"cloud_rain": {
 	},
 	"coat": {
 		"emoji": "🧥"
@@ -499,6 +519,8 @@ GLYPHS = {
 	"cry": {
 		"emoji": "😢",
 		"use": { "exp": "" }
+	},
+	"cut_of_meat": {
 	},
 	"dark_sunglasses": {
 		"emoji": "🕶"
@@ -538,6 +560,8 @@ GLYPHS = {
 		"emoji": "👀",
 		"use": { "verb": "see, look" }
 	},
+	"face_in_clouds": {
+	},
 	"face_with_monocle": {
 		"emoji": "🧐",
 		"use": { "exp": "" }
@@ -547,6 +571,8 @@ GLYPHS = {
 				"noun": 	"group<br>🌐👪 'internet group, server'",
 				"adjadv":	"together"
 		}
+	},
+	"feather": {
 	},
 	"file_cabinet": {
 		"emoji": "🗄",
@@ -568,6 +594,9 @@ GLYPHS = {
 	},
 	"fountain": {
 	},
+	"four_leaf_clover": {
+		"emoji": "🍀"
+	},
 	"game_die": {
 		"emoji": "🎲"
 	},
@@ -578,11 +607,24 @@ GLYPHS = {
 		"aliases": ["internet"],
 		"use": { "noun": "internet, web" }
 	},
+	"gloves": {
+	},
 	"hammer": {
 	},
 	"handshake": {
 		"emoji": "🤝",
 		"use": { "verb": "agree" }
+	},
+	"headphones": {
+		"emoji": "🎧"
+	},
+	"heart": {
+		"emoji": "♥"
+	},
+	"heavy_plus_sign": {
+		"emoji": "➕"
+	},
+	"homes": {
 	},
 	"hot_face": {
 		"emoji": "🥵",
@@ -604,6 +646,12 @@ GLYPHS = {
 	},
 	"infinity": {
 		"emoji": "♾",
+	},
+	"island": {
+		"emoji": "🏝",
+		"use": 	{ 
+			"noun": "land"
+		}
 	},
 	"jigsaw": {
 		"emoji": "🧩"
@@ -638,6 +686,8 @@ GLYPHS = {
 	},
 	"leftwards_arrow_with_hook":{
 		
+	},
+	"lips": {
 	},
 	"loud_sound": {
 	},
@@ -700,6 +750,10 @@ GLYPHS = {
 	"package": {
 		"emoji": "📦",
 	},	
+	"page_facing_up": {
+	},
+	"pancakes": {
+	},
 	"partying_face": {
 		"emoji": "🥳",
 		"use": { "exp": "" }
@@ -724,11 +778,18 @@ GLYPHS = {
 	},
 	"person_sitting_in_lotus_position": {
 	},
+	"person_standing": {
+	},
 	"person_walking": {
 		"emoji": "🚶",
 	},
+	"pie": {
+	},
 	"pinching_hand": {
 		"use": { "adjadv":"small, 'micro-'" }
+	},
+	"place_of_worship": {
+		"emoji": "🛐"
 	},
 	"pray": {
 		"emoji": "🙏",
@@ -749,9 +810,14 @@ GLYPHS = {
 		"emoji": "😡",
 		"use": { "exp": "" }
 	},
+	"railway_track": {
+		"emoji": "🛤"
+	},
 	"raised_hands": {
 		"emoji": "🙌",
 		"use": {"adjadv": "excited" }
+	},
+	"ramen": {
 	},
 	"recycle": {
 		"emoji": "♻",
@@ -764,11 +830,16 @@ GLYPHS = {
 	"right_facing_fist": {
 		"emoji": "🤜"
 	},
+	"rightwards_hand": {
+
+	},
 	"robot": {
 		"emoji": "🤖",
 		"use": { "noun": "machines with suffix '-er':<br>'printer', 'dishwasher', 'assembler', etc." }
 	},
 	"rocket": {
+	},
+	"rose": {
 	},
 	"round_pushpin": {
 		"emoji": "📍",
@@ -795,6 +866,8 @@ GLYPHS = {
 	"see_no_evil": {
 		"emoji": "🙈"
 	},
+	"sheep": {
+	},
 	"shopping_cart": {
 	},
 	"skull": {
@@ -803,6 +876,8 @@ GLYPHS = {
 	},
 	"skull_crossbones": {
 		"emoji": "☠"
+	},
+	"sled": {
 	},
 	"smile":{
 		"emoji": "😄"
@@ -848,9 +923,15 @@ GLYPHS = {
 		"emoji": "🤩",
 		"use": { "exp": "excitement, amazement" }
 	},
+	"stuck_out_tongue": {
+		"emoji": "😛"
+	},
 	"sunglasses": {
 		"emoji": "😎",
 		"use": { "exp": "" }
+	},
+	"sunrise": {
+		"emoji": "🌅"
 	},
 	"swan": {
 		"emoji": "🦢",
@@ -860,6 +941,8 @@ GLYPHS = {
 	},
 	"taco": {
 		"emoji": "🌮"
+	},
+	"teapot": {
 	},
 	"test_tube": {
 		"emoji": "🧪",
@@ -902,6 +985,9 @@ GLYPHS = {
 		"use": {
 			"verb": "win, succeed"
 		}
+	},
+	"warning": {
+		"emoji": "⚠"
 	},
 	"wave": {
 		"emoji": "👋",
